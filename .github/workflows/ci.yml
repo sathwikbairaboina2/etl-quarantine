@@ -1,0 +1,42 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run gates
+      - name: Benchmark smoke (not committed)
+        run: npm run bench -- --rows 100000 --sweep-runs 3 --sweep-rows 20000 --out bench/ci
+
+  integration:
+    runs-on: ubuntu-latest
+    services:
+      ddb:
+        image: amazon/dynamodb-local:3.3.1
+        ports:
+          - 5340:8000
+      s3:
+        image: adobe/s3mock:4.11.0
+        ports:
+          - 5341:9090
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run test:it

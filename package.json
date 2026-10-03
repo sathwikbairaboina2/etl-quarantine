@@ -14,6 +14,8 @@
     "fixtures": "tsx scripts/gen-fixture.ts",
     "bundle": "node scripts/bundle.mjs",
     "bench": "tsx bench/bench.ts",
+    "smoke:pack": "node scripts/pack-smoke.mjs",
+    "gates": "npm run typecheck && npm test && npm run build && npm run synth && npm run smoke:pack",
     "synth": "npm run bundle && cdk synth --quiet --no-notices",
     "demo": "npm run build && node dist/cli/main.js demo",
     "it:up": "docker compose up -d",
