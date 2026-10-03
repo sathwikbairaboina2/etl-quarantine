@@ -12,6 +12,7 @@
     "test": "vitest run",
     "build": "node scripts/clean.mjs dist && tsc -p tsconfig.build.json",
     "fixtures": "tsx scripts/gen-fixture.ts",
+    "bundle": "node scripts/bundle.mjs",
     "demo": "npm run build && node dist/cli/main.js demo",
     "it:up": "docker compose up -d",
     "it:down": "docker compose down -v",
