@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
 import { VERSION } from '../version.js';
+import { runDemo } from './demo.js';
 import {
   cmdCuratedCount,
   cmdFiles,
@@ -97,6 +98,19 @@ program
   .requiredOption('--dataset <name>')
   .description('count rows by reading Parquet and quarantine files back')
   .action(async (o: { dataset: string }) => print(await cmdCuratedCount(deps(), o.dataset)));
+
+program
+  .command('demo')
+  .description('30-second tour: ingest with a crash and a duplicate delivery, quarantine, fix, replay, row accounting')
+  .option('--rows <n>', 'rows to generate', '50000')
+  .option('--seed <n>', 'generator seed', '7')
+  .action(async (o: { rows: string; seed: string }) => {
+    const explicit = program.getOptionValueSource('root') === 'cli';
+    await runDemo(
+      { rows: Number(o.rows), seed: Number(o.seed), ...(explicit ? { root: program.opts<{ root: string }>().root } : {}) },
+      print,
+    );
+  });
 
 program.parseAsync(process.argv).catch((e: unknown) => {
   const err = e as Error;

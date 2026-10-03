@@ -11,7 +11,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "build": "node scripts/clean.mjs dist && tsc -p tsconfig.build.json",
-    "fixtures": "tsx scripts/gen-fixture.ts"
+    "fixtures": "tsx scripts/gen-fixture.ts",
+    "demo": "npm run build && node dist/cli/main.js demo"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "3.1146.0",
