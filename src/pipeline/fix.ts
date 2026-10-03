@@ -3,9 +3,16 @@ import { normalize } from '../core/normalize.js';
 import type { RawRecord, RowError } from '../core/types.js';
 import { createValidator, validateRow } from '../core/validate.js';
 import { getDataset } from '../datasets/registry.js';
-import { NotFoundError, StateError } from '../ports.js';
+import { NotFoundError, StateError, type FileMeta } from '../ports.js';
 import type { Deps } from './deps.js';
 import { loadQuarantine, refreshParentStatus } from './lineage-update.js';
+
+/** Rows of a file can be fixed, discarded or replayed only once the file's good rows are visible. */
+export function assertWorkable(meta: FileMeta, action: string): void {
+  if (meta.status === 'LOADED_WITH_QUARANTINE' || meta.status === 'SUPERSEDED') return;
+  const hint = meta.status === 'HELD' ? ' (promote the file first)' : '';
+  throw new StateError(`cannot ${action} ${meta.sha}: status is ${meta.status}, not LOADED_WITH_QUARANTINE or SUPERSEDED${hint}`);
+}
 
 export { loadQuarantine };
 
@@ -32,6 +39,7 @@ export async function fix(
   const { sha, rowNumber, set } = input;
   const meta = await deps.control.getFile(sha);
   if (!meta) throw new NotFoundError(`no file with sha ${sha}`);
+  assertWorkable(meta, 'fix rows of');
   const q = (await loadQuarantine(deps, sha)).find((r) => r.rowNumber === rowNumber);
   if (!q) throw new StateError(`row ${rowNumber} is not quarantined in file ${sha}`);
 
@@ -50,9 +58,16 @@ export async function discard(deps: Deps, input: { sha: string; rowNumbers: numb
   const { sha, rowNumbers, reason } = input;
   const meta = await deps.control.getFile(sha);
   if (!meta) throw new NotFoundError(`no file with sha ${sha}`);
+  assertWorkable(meta, 'discard rows of');
   const quarantined = new Set((await loadQuarantine(deps, sha)).map((r) => r.rowNumber));
   const unknown = rowNumbers.filter((r) => !quarantined.has(r));
   if (unknown.length > 0) throw new StateError(`rows not quarantined in file ${sha}: ${unknown.join(', ')}`);
+  const states = await deps.control.listRowStates(sha);
+  const closed = rowNumbers.filter((r) => {
+    const s = states.get(r) ?? 'pending';
+    return s !== 'pending' && s !== 'requarantined';
+  });
+  if (closed.length > 0) throw new StateError(`rows already loaded or discarded in file ${sha}: ${closed.join(', ')}`);
   await deps.control.putRowStates(sha, rowNumbers.map((r): [number, 'discarded'] => [r, 'discarded']));
   const at = deps.now().toISOString();
   await deps.objects.put(

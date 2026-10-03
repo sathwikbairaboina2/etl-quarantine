@@ -4,6 +4,7 @@ import { proposedFixPrefix } from '../../src/core/keys.js';
 import { runIngest } from '../../src/pipeline/driver.js';
 import { discard, fix } from '../../src/pipeline/fix.js';
 import { loadQuarantine } from '../../src/pipeline/lineage-update.js';
+import { readback } from '../../src/pipeline/readback.js';
 import { replay } from '../../src/pipeline/replay.js';
 import { StateError } from '../../src/ports.js';
 import { memDeps, type MemDeps } from '../support/deps.js';
@@ -30,6 +31,7 @@ async function assertPartition(d: MemDeps, sha: string) {
   return s;
 }
 
+const withHeader = (rows: string[]) => [HEADER, ...rows, ''].join(String.fromCharCode(10));
 const iso = '2026-01-13';
 const fixValid = (d: MemDeps, sha: string, row: number) => fix(d, { sha, rowNumber: row, set: { contract_start: iso } });
 const runChild = async (d: MemDeps, key: string) => runIngest(d, { key });
@@ -137,5 +139,67 @@ describe('replay and lineage', () => {
     expect(b.stillInvalid.map((e) => e.instancePath)).toEqual(['/plan']);
     const c = await fix(d, { sha, rowNumber: 20, set: { plan: 'pro' } });
     expect(c.stillInvalid).toEqual([]);
+  });
+
+  it('refuses fix, discard and replay on a FAILED parent and shows no visible rows', async () => {
+    const d = memDeps({ chunkRows: 100 });
+    const rows = Array.from({ length: 400 }, (_, i) => (BAD_ROWS.includes(i + 1) ? dmy(i + 1) : good(i + 1)));
+    await d.objects.put('raw', 'dataset=customers/f.csv', withHeader(rows));
+    const run = await runIngest(d, { key: 'dataset=customers/f.csv' }, { crashAfterOutput: [[3, 3]] });
+    expect(run.status).toBe('FAILED');
+    await expect(fix(d, { sha: run.sha, rowNumber: 20, set: { contract_start: iso } })).rejects.toBeInstanceOf(StateError);
+    await expect(discard(d, { sha: run.sha, rowNumbers: [20] })).rejects.toBeInstanceOf(StateError);
+    await expect(replay(d, { sha: run.sha, onlyFixed: true })).rejects.toBeInstanceOf(StateError);
+    expect((await readback(d.objects, 'customers', { sha: run.sha })).parquetRows).toBe(0);
+  });
+
+  it('refuses replay on a HELD parent and tells the operator to promote', async () => {
+    const d = memDeps({ chunkRows: 100 });
+    const rows = Array.from({ length: 400 }, (_, i) => (i % 5 === 0 ? dmy(i + 1) : good(i + 1)));
+    await d.objects.put('raw', 'dataset=customers/h.csv', withHeader(rows));
+    const run = await runIngest(d, { key: 'dataset=customers/h.csv' });
+    expect(run.status).toBe('HELD');
+    await expect(replay(d, { sha: run.sha })).rejects.toThrow(/promote/);
+    await expect(fix(d, { sha: run.sha, rowNumber: 1, set: { contract_start: iso } })).rejects.toBeInstanceOf(StateError);
+    await expect(discard(d, { sha: run.sha, rowNumbers: [1] })).rejects.toBeInstanceOf(StateError);
+    expect((await readback(d.objects, 'customers', { sha: run.sha })).parquetRows).toBe(0);
+  });
+
+  it('discard rejects rows a replay already loaded and leaves the summary unchanged', async () => {
+    const d = memDeps({ chunkRows: 100 });
+    const sha = await setup(d);
+    await fixValid(d, sha, 20);
+    const rep = await replay(d, { sha, onlyFixed: true });
+    if ('nothingToReplay' in rep) throw new Error('expected a replay');
+    await runChild(d, rep.childKey);
+    const before = await assertPartition(d, sha);
+    expect(before.loaded).toBe(1);
+    await expect(discard(d, { sha, rowNumbers: [20] })).rejects.toBeInstanceOf(StateError);
+    expect(await assertPartition(d, sha)).toEqual(before);
+  });
+
+  it('rows of a replay child that ended FAILED can be replayed again', async () => {
+    const d = memDeps({ chunkRows: 100 });
+    const sha = await setup(d);
+    await fixValid(d, sha, 20);
+    const rep = await replay(d, { sha, onlyFixed: true });
+    if ('nothingToReplay' in rep) throw new Error('expected a replay');
+    const failed = await runIngest(d, { key: rep.childKey }, { crashBeforeOutput: [[0, 3]] });
+    expect(failed.status).toBe('FAILED');
+    expect((await assertPartition(d, sha)).pending).toBe(20);
+
+    const again = await replay(d, { sha, onlyFixed: true });
+    if ('nothingToReplay' in again) throw new Error(`expected a replay, got: ${again.reason}`);
+    expect(again.rows).toBe(1);
+    const child = await runChild(d, again.childKey);
+    expect(child).toMatchObject({ status: 'LOADED', rowsIn: 1, rowsValid: 1 });
+    expect(await assertPartition(d, sha)).toEqual({ pending: 19, loaded: 1, requarantined: 0, discarded: 0 });
+    expect((await readback(d.objects, 'customers', { sha: child.sha })).parquetRows).toBe(1);
+    // A third replay of a different generation does not collide with an existing replay key.
+    await fixValid(d, sha, 40);
+    const third = await replay(d, { sha, onlyFixed: true });
+    if ('nothingToReplay' in third) throw new Error('expected a third replay');
+    expect(third.childKey).not.toBe(again.childKey);
+    expect(third.childKey).not.toBe(rep.childKey);
   });
 });

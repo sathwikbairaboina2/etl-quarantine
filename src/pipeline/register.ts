@@ -51,6 +51,22 @@ export async function register(deps: Deps, input: { key: string }): Promise<Regi
     return { status: 'REGISTERED', sha, dataset, key };
   }
   const existing = await deps.control.getFile(sha);
+  if (existing?.status === 'FAILED') {
+    // A failed file is not final: clear its partial progress and run it again from this delivery.
+    await deps.control.resetChunks(sha);
+    await deps.control.updateFile(sha, {
+      status: 'REGISTERED',
+      sourceKey: key,
+      error: undefined,
+      rowsIn: undefined,
+      rowsValid: undefined,
+      rowsQuarantined: undefined,
+      chunkCount: undefined,
+      updatedAt: at,
+      ...(parentSha ? { parentSha } : {}),
+    });
+    return { status: 'REGISTERED', sha, dataset, key };
+  }
   await deps.control.recordDuplicate(dataset, sha, key, at);
   return { status: 'DUPLICATE', sha, dataset, key, ...(existing ? { originalKey: existing.sourceKey } : {}) };
 }

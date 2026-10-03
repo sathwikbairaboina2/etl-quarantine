@@ -306,7 +306,12 @@ ${results.machine.cpuModel}, ${results.machine.cpuCount} logical CPUs, ${results
   fs.writeFileSync(path.join(OUT, 'RESULTS.md'), md);
   console.log(`wrote ${path.join(OUT, 'results.json')} and RESULTS.md`);
 
-  const bad = h.lost !== 0 || h.duplicated !== 0 || !h.labelsMatch || s.conservedRuns !== s.totalRuns;
+  const headlineOk =
+    h.status === 'LOADED_WITH_QUARANTINE' &&
+    h.duplicateDeliveryStatus === 'DUPLICATE' &&
+    h.retries === h.injectedCrashes.total &&
+    h.readback.pendingParquetRows === 0;
+  const bad = h.lost !== 0 || h.duplicated !== 0 || !h.labelsMatch || !headlineOk || s.conservedRuns !== s.totalRuns;
   if (bad) {
     console.error('NOT CONSERVED: this is a bug, not a number to publish');
     process.exitCode = 1;

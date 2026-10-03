@@ -60,7 +60,7 @@ describe('cli commands', () => {
 
     const count = await cmdCuratedCount(deps, 'customers');
     expect(count).toContain('visible parquet rows: 975');
-    expect(count).toContain('quarantine rows: 26');
+    expect(count).toContain('quarantine records (all files, replay children included): 26');
 
     expect(await cmdFiles(deps, 'customers')).toContain('LOADED_WITH_QUARANTINE');
     expect(await cmdStatus(deps, sha)).toContain('status: LOADED_WITH_QUARANTINE');

@@ -3,7 +3,7 @@ import type { RawRecord } from '../core/types.js';
 import { getDataset } from '../datasets/registry.js';
 import { NotFoundError, StateError } from '../ports.js';
 import type { Deps } from './deps.js';
-import { readApprovedFix, type ApprovedFix } from './fix.js';
+import { assertWorkable, readApprovedFix, type ApprovedFix } from './fix.js';
 import { sha256Bytes } from './hash.js';
 import { loadQuarantine } from './lineage-update.js';
 
@@ -31,6 +31,7 @@ export async function replay(deps: Deps, input: { sha: string; onlyFixed?: boole
   const meta = await deps.control.getFile(sha);
   if (!meta) throw new NotFoundError(`no file with sha ${sha}`);
   if (meta.parentSha) throw new StateError(`file ${sha} is itself a replay of ${meta.parentSha}; replay the parent instead`);
+  assertWorkable(meta, 'replay');
 
   const { manifest } = getDataset(meta.dataset);
   const states = await deps.control.listRowStates(sha);
@@ -51,7 +52,14 @@ export async function replay(deps: Deps, input: { sha: string; onlyFixed?: boole
   const recordOf = (q: (typeof open)[number]): RawRecord => fixes.get(q.rowNumber)?.record ?? q.parsed;
   const hashOf = (r: RawRecord) => sha256Bytes(JSON.stringify(header.map((h) => r[h] ?? null)));
 
-  const edges = await deps.control.listReplayEdges(sha);
+  // Only edges whose child file got through count as sent; a FAILED or missing child leaves its rows open.
+  const sentStatuses = new Set(['LOADED', 'LOADED_WITH_QUARANTINE', 'SUPERSEDED', 'HELD']);
+  const allEdges = await deps.control.listReplayEdges(sha);
+  const edges = [];
+  for (const e of allEdges) {
+    const child = await deps.control.getFile(e.childSha);
+    if (child && sentStatuses.has(child.status)) edges.push(e);
+  }
   const generation = (e: { childKey: string }) => Number(/-r(\d+)\.csv$/.exec(e.childKey)?.[1] ?? 0);
   const lastSent = new Map<number, string>();
   for (const e of [...edges].sort((a, b) => generation(a) - generation(b))) {
@@ -74,7 +82,7 @@ export async function replay(deps: Deps, input: { sha: string; onlyFixed?: boole
     return { nothingToReplay: true, reason: 'identical content was already replayed' };
   }
 
-  const childKey = replayKey(meta.dataset, sha, edges.length + 1);
+  const childKey = replayKey(meta.dataset, sha, Math.max(0, ...allEdges.map(generation)) + 1);
   const parentRows = chosen.map((q) => q.rowNumber);
   await deps.objects.put('raw', childKey, bytes);
   const rowHashes = chosen.map((q) => hashOf(recordOf(q)));

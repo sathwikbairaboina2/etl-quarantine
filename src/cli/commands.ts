@@ -181,7 +181,7 @@ export async function cmdCuratedCount(deps: Deps, dataset: string): Promise<stri
   return [
     `visible parquet rows: ${rb.parquetRows}`,
     `pending parquet rows: ${rb.pendingParquetRows}`,
-    `quarantine rows: ${rb.quarantineRows}`,
+    `quarantine records (all files, replay children included): ${rb.quarantineRows}`,
     `distinct ids: ${rb.distinctIds}`,
     `visible parquet parts: ${rb.parquetParts}`,
   ].join('\n');

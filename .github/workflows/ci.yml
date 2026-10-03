@@ -39,4 +39,5 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      # The service containers have no health checks; test/integration/support.ts waits up to 120 s for both emulators.
       - run: npm run test:it

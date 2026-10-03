@@ -173,6 +173,17 @@ export function controlStoreContract(name: string, makeStore: Maker<ControlStore
       expect((await c.listChunks(sha)).map((x) => x.index)).toEqual([0, 2, 3, 11]);
     });
 
+    it('resetChunks removes only the named file chunks', async () => {
+      const [a, b] = [uid(), uid()];
+      for (const i of [0, 1, 2]) await c.putChunk(a, { index: i, key: `k${i}`, rowsIn: 1 });
+      await c.putChunk(b, { index: 0, key: 'k0', rowsIn: 1 });
+      await c.resetChunks(a);
+      expect(await c.listChunks(a)).toEqual([]);
+      expect(await c.listChunks(b)).toHaveLength(1);
+      await c.putChunk(a, { index: 0, key: 'again', rowsIn: 2 });
+      expect((await c.listChunks(a))[0]).toMatchObject({ key: 'again', rowsIn: 2 });
+    });
+
     it('stores replay edges', async () => {
       const sha = uid();
       const e1 = { childSha: 'bbb', childKey: 'k1', parentRows: [1, 2], createdAt: '2026-10-04T09:00:00.000Z' };

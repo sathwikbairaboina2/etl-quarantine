@@ -8,7 +8,25 @@ import { lineageSummary, loadQuarantine } from '../pipeline/lineage-update.js';
 import { readback } from '../pipeline/readback.js';
 import { replay } from '../pipeline/replay.js';
 import { runIngest } from '../pipeline/driver.js';
+import type { Deps } from '../pipeline/deps.js';
 import { CliError, formatRun, ingestFile, localDeps, table } from './commands.js';
+
+/**
+ * Row accounting for one source file, read back from Parquet and quarantine files.
+ * Quarantine records of replay children are left out: their rows are accounted for by the parent.
+ * lost = source - (parent parquet + parent quarantine), plus any parent row marked loaded whose
+ * replay child has no visible Parquet row for it.
+ */
+export async function accountRows(deps: Deps, sha: string, sourceRows: number): Promise<{ curatedRows: number; lost: number }> {
+  const parent = await readback(deps.objects, 'customers', { sha });
+  let childParquet = 0;
+  for (const e of await deps.control.listReplayEdges(sha)) {
+    childParquet += (await readback(deps.objects, 'customers', { sha: e.childSha })).parquetRows;
+  }
+  const s = await lineageSummary(deps, sha);
+  const lost = sourceRows - (parent.parquetRows + parent.quarantineRows) + (s.loaded - childParquet);
+  return { curatedRows: parent.parquetRows + childParquet, lost };
+}
 
 export interface DemoOptions {
   rows?: number;
@@ -124,15 +142,15 @@ export async function runDemo(opts: DemoOptions, out: (line: string) => void): P
   const rb = await readback(deps.objects, 'customers');
   const s = await lineageSummary(deps, sha);
   const stillQuarantined = s.pending + s.requarantined;
-  // Quarantine files keep rows that were later loaded by a replay; count those once, as curated rows.
-  const lost = rows - (rb.parquetRows + (rb.quarantineRows - s.loaded));
+  const acct = await accountRows(deps, sha, rows);
+  const lost = acct.lost;
   const duplicated = rb.parquetRows + rb.pendingParquetRows - rb.distinctIds;
   const wallMs = performance.now() - t0;
 
   out(`${++step}. row accounting, read back from the Parquet and quarantine files`);
   const final = [
     ['source rows', String(rows)],
-    ['curated rows', String(rb.parquetRows)],
+    ['curated rows', String(acct.curatedRows)],
     ['still quarantined', String(stillQuarantined)],
     ['discarded', String(s.discarded)],
     ['lost', String(lost)],
@@ -145,7 +163,7 @@ export async function runDemo(opts: DemoOptions, out: (line: string) => void): P
   return {
     root,
     sourceRows: rows,
-    curatedRows: rb.parquetRows,
+    curatedRows: acct.curatedRows,
     stillQuarantined,
     discarded: s.discarded,
     loadedFromQuarantine: s.loaded,

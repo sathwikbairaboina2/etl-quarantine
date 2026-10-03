@@ -229,6 +229,25 @@ export class DynamoControlStore implements ControlStore {
     return items.map((i) => stripKeys<ChunkRecord>(i)).sort((a, b) => a.index - b.index);
   }
 
+  async resetChunks(sha: string): Promise<void> {
+    const keys = (await this.queryAll(fileKey(sha), 'CHUNK#')).map((i) => ({ pk: i.pk as string, sk: i.sk as string }));
+    for (let i = 0; i < keys.length; i += 25) {
+      let requests: Array<{ DeleteRequest: { Key: { pk: string; sk: string } } }> | undefined = keys
+        .slice(i, i + 25)
+        .map((Key) => ({ DeleteRequest: { Key } }));
+      for (let tries = 0; requests && requests.length > 0; tries++) {
+        const r: { UnprocessedItems?: Record<string, typeof requests> } = await this.doc.send(
+          new BatchWriteCommand({ RequestItems: { [this.table]: requests } }),
+        );
+        requests = r.UnprocessedItems?.[this.table];
+        if (requests && requests.length > 0) {
+          if (tries >= MAX_BATCH_TRIES) throw new Error('BatchWrite left unprocessed items after retries');
+          await this.sleep(20 * 2 ** tries);
+        }
+      }
+    }
+  }
+
   async putReplayEdge(parentSha: string, edge: ReplayEdge): Promise<void> {
     const parts = Math.max(1, Math.ceil(edge.parentRows.length / EDGE_PART_ROWS));
     for (let p = 0; p < parts; p++) {

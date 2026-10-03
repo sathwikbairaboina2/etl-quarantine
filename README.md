@@ -2,7 +2,7 @@
 
 Drop a CSV in a raw bucket. Every row is checked against a versioned JSON Schema. Good rows land as Parquet. Bad rows land in a quarantine you can inspect, fix and replay with one command. The pipeline proves that no row is lost or loaded twice, even when chunks crash and the same file arrives twice.
 
-**1,000,000 rows, 18 injected chunk crashes and a duplicate delivery: 0 lost, 0 duplicated, 15,013 rows/s on one machine.** Counted by reading the Parquet and quarantine files back, not from counters. Details and the 20-seed fault sweep (20 of 20 runs conserved every row) are in [bench/RESULTS.md](bench/RESULTS.md), generated from [bench/results.json](bench/results.json).
+**1,000,000 rows, 18 injected chunk crashes and a duplicate delivery: 0 lost, 0 duplicated, 35,950 rows/s on one machine.** Counted by reading the Parquet and quarantine files back, not from counters. Details and the 20-seed fault sweep (20 of 20 runs conserved every row) are in [bench/RESULTS.md](bench/RESULTS.md), generated from [bench/results.json](bench/results.json). Throughput is from a single run and varies with machine load (three runs on the same machine gave 15,013, 23,184 and 35,950 rows/s; the last is the one committed in `bench/results.json`); the conservation results reproduced exactly.
 
 ## 30 seconds
 

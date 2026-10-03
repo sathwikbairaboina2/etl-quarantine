@@ -22,12 +22,12 @@ export interface AwsEnv {
 
 let ready: Promise<void> | undefined;
 
-/** Waits up to 30 s for both emulators. */
+/** Waits for both emulators; cold starts take 30 s or more (S3Mock about 30 s, DynamoDB Local about 32 s measured). ETL_IT_WAIT_MS overrides the 120 s default. */
 function waitForEmulators(): Promise<void> {
   ready ??= (async () => {
     const ddb = new DynamoDBClient({ endpoint: DDB_ENDPOINT, region: 'us-east-1', credentials });
     const s3 = new S3Client({ endpoint: S3_ENDPOINT, region: 'us-east-1', credentials, forcePathStyle: true });
-    const deadline = Date.now() + 30_000;
+    const deadline = Date.now() + Number(process.env.ETL_IT_WAIT_MS ?? 120_000);
     let lastError: unknown;
     while (Date.now() < deadline) {
       try {

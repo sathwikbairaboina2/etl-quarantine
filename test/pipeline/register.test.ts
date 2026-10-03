@@ -36,11 +36,19 @@ describe('register', () => {
     expect((await register(d, { key: A })).status).toBe('DUPLICATE');
   });
 
-  it('a FAILED original is still a duplicate (no automatic re-run)', async () => {
+  it('a FAILED original is re-admitted with its chunk records cleared', async () => {
     const d = memDeps();
     await d.objects.put('raw', A, csv);
+    await d.objects.put('raw', 'dataset=customers/b.csv', csv);
     const r = await register(d, { key: A });
-    await d.control.updateFile(r.sha, { status: 'FAILED', error: 'x' });
+    await d.control.putChunk(r.sha, { index: 0, key: 'k0', rowsIn: 1 });
+    await d.control.updateFile(r.sha, { status: 'FAILED', error: 'x', rowsIn: 1 });
+    const again = await register(d, { key: 'dataset=customers/b.csv' });
+    expect(again).toMatchObject({ status: 'REGISTERED', sha: r.sha });
+    expect(await d.control.getFile(r.sha)).toMatchObject({ status: 'REGISTERED', sourceKey: 'dataset=customers/b.csv' });
+    expect((await d.control.getFile(r.sha))?.error).toBeUndefined();
+    expect(await d.control.listChunks(r.sha)).toEqual([]);
+    // Once re-admitted and not failed, a further delivery is a duplicate again.
     expect((await register(d, { key: A })).status).toBe('DUPLICATE');
   });
 

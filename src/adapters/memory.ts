@@ -164,6 +164,11 @@ export class InMemoryControlStore implements ControlStore {
     return [...(this.chunks.get(sha)?.values() ?? [])].sort((a, b) => a.index - b.index).map(clone);
   }
 
+  async resetChunks(sha: string): Promise<void> {
+    this.chunks.delete(sha);
+    this.persist();
+  }
+
   async putReplayEdge(parentSha: string, edge: ReplayEdge): Promise<void> {
     const list = this.edges.get(parentSha) ?? [];
     const next = list.filter((e) => e.childSha !== edge.childSha);

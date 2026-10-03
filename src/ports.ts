@@ -89,6 +89,7 @@ export interface ControlStore {
   putChunk(sha: string, chunk: ChunkRecord): Promise<void>; // create-only: split result, rowsIn
   recordChunkResult(sha: string, index: number, r: ChunkResult): Promise<'applied' | 'stale'>; // set, never add; applies only if r.attempt >= stored attempt
   listChunks(sha: string): Promise<ChunkRecord[]>; // by index
+  resetChunks(sha: string): Promise<void>; // drops all CHUNK# items so a FAILED file can be re-admitted
   putReplayEdge(parentSha: string, edge: ReplayEdge): Promise<void>;
   listReplayEdges(parentSha: string): Promise<ReplayEdge[]>;
   putRowStates(parentSha: string, entries: Array<[number, RowState]>): Promise<void>; // batch
