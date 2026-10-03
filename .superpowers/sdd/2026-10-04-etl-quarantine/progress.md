@@ -1,0 +1,14 @@
+# Ledger: etl-quarantine v0.1 (2026-10-04)
+
+Plan: `docs/superpowers/plans/2026-10-04-etl-quarantine.md` (25 tasks)
+Spec: `docs/superpowers/specs/2026-10-04-etl-quarantine.md`
+ADRs: `docs/adr/0001`-`0007`
+Commits: authorized, local only. Never push or add remotes. Messages end with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
+Ports: 5340-5349 only. Containers: `etl-quarantine-*`, removed after use.
+
+Format: one line per task, `Task N: complete (<real test counts / outputs>) | commit: "<subject>"`. Deviations: `Ruling: <what> - <why> - <cost>`. A builder that runs out of context writes `Task N: partial (<what is done, what is next>)` and stops; the next builder resumes from the first task that is not `complete`.
+
+Plan (Opus, 2026-10-04): spec, ADRs 0001-0007 and plan written. Prototypes in scratch (not in repo) confirmed: hyparquet-writer explicit-schema DATE/INT64 round-trip; csv-parse 7 BOM/CRLF/quoted newline; Ajv 2020 cast trick under NodeNext; DynamoDB Local 3.3.1 conditional put + attempt guard; S3Mock 4.11.0 copy/delete/head/404/pagination; CDK 2.272.0 DistributedMap + S3JsonItemReader, $$.State.RetryCount payload, Match.wildcard. | commit: "docs: add v0.1 spec, ADRs, implementation plan and ledger"
+Ruling: no LocalStack anywhere (no token) - ADR 0002 - the deployed state machine is proven only by synth assertions
+Ruling: v0.1 includes fix/discard/replay/promote and lineage but not Glue/Athena, the LLM suggester, JSONL or schema diff - ADR 0007 - I9 and I10 unimplemented
+Ruling: no cost-per-million-rows number is published - nothing is deployed, so it cannot be measured - the design's second headline metric waits for a deploy
