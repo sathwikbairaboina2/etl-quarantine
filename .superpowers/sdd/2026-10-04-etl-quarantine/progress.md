@@ -16,3 +16,5 @@ Task 1: complete (typecheck exit 0; vitest 1 passed) | commit: "chore: scaffold 
 Task 2: complete (vitest test/core 10 passed; typecheck exit 0) | commit: "feat(core): add manifest types, customers dataset and purity guard"
 Task 3: complete (vitest test/core 40 passed cumulative; typecheck exit 0) | commit: "feat(core): normalise, validate with Ajv 2020-12 and cast valid rows"
 Task 4: complete (vitest test/core 64 passed cumulative incl. fast-check 500 runs; typecheck exit 0) | commit: "feat(core): add row accounting, limits, key layout and lineage rules"
+Task 5: complete (csv tests included in 64 passed; typecheck exit 0) | commit: "feat(core): map CSV fields to records with column-count errors"
+Task 6: complete (vitest test/adapters memory contracts pass; typecheck exit 0) | commit: "feat(adapters): define ports and in-memory stores with a shared contract suite"
