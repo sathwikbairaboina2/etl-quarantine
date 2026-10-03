@@ -18,3 +18,6 @@ Task 3: complete (vitest test/core 40 passed cumulative; typecheck exit 0) | com
 Task 4: complete (vitest test/core 64 passed cumulative incl. fast-check 500 runs; typecheck exit 0) | commit: "feat(core): add row accounting, limits, key layout and lineage rules"
 Task 5: complete (csv tests included in 64 passed; typecheck exit 0) | commit: "feat(core): map CSV fields to records with column-count errors"
 Task 6: complete (vitest test/adapters memory contracts pass; typecheck exit 0) | commit: "feat(adapters): define ports and in-memory stores with a shared contract suite"
+Task 7: complete (vitest test/adapters 37 passed total; typecheck exit 0) | commit: "feat(adapters): add filesystem object store and JSON-file control store"
+Ruling: added .gitattributes (text=auto eol=lf, csv -text) - Windows autocrlf would alter fixture bytes/shas - none
+Task 8: complete (vitest register 8 passed; typecheck exit 0) | commit: "feat(pipeline): register files by content hash with duplicate detection"
