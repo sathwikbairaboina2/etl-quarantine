@@ -1,0 +1,39 @@
+{
+  "name": "etl-quarantine",
+  "version": "0.1.0",
+  "description": "Event-driven CSV ETL with row-level quarantine, fix-and-replay and proven row conservation",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22.12" },
+  "bin": { "etl": "dist/cli/main.js" },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "build": "node scripts/clean.mjs dist && tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "3.1146.0",
+    "@aws-sdk/client-s3": "3.1146.0",
+    "@aws-sdk/lib-dynamodb": "3.1146.0",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "commander": "15.0.0",
+    "csv-parse": "7.0.3",
+    "hyparquet": "1.31.1",
+    "hyparquet-writer": "0.16.10"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.164",
+    "@types/node": "24.19.1",
+    "aws-cdk": "2.1144.0",
+    "aws-cdk-lib": "2.272.0",
+    "cdk-nag": "3.0.2",
+    "constructs": "10.8.1",
+    "esbuild": "0.28.2",
+    "fast-check": "4.10.2",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
+  }
+}
