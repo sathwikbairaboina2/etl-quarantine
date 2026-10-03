@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "customers/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["customer_id", "email", "country", "currency", "amount", "contract_start", "plan"],
+  "properties": {
+    "customer_id": { "type": "string", "pattern": "^C-[0-9]{1,10}$" },
+    "email": { "type": ["string", "null"], "format": "email" },
+    "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "currency": { "type": "string", "enum": ["EUR", "USD", "GBP"] },
+    "amount": { "type": "string", "pattern": "^-?[0-9]{1,12}(\\.[0-9]{1,2})?$" },
+    "contract_start": { "type": "string", "format": "date" },
+    "plan": { "type": "string", "enum": ["basic", "pro", "enterprise"] }
+  }
+}

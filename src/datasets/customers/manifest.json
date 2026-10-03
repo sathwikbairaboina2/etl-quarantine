@@ -1,0 +1,18 @@
+{
+  "dataset": "customers",
+  "schema": "customers/v1",
+  "format": "csv",
+  "header": true,
+  "columns": [
+    { "name": "customer_id", "type": "string", "required": true, "normalize": ["trim"] },
+    { "name": "email", "type": "string", "required": false, "normalize": ["trim", "lowercase", "emptyToNull"] },
+    { "name": "country", "type": "string", "required": true, "normalize": ["trim", "uppercase"] },
+    { "name": "currency", "type": "string", "required": true, "normalize": ["trim", "uppercase"] },
+    { "name": "amount", "type": "int64_cents", "required": true, "normalize": ["trim"], "outputName": "amount_cents" },
+    { "name": "contract_start", "type": "date", "required": true, "normalize": ["trim"] },
+    { "name": "plan", "type": "string", "required": true, "normalize": ["trim", "lowercase"] }
+  ],
+  "partitionBy": "ingest_date",
+  "quarantineThreshold": 0.05,
+  "chunkRows": 5000
+}

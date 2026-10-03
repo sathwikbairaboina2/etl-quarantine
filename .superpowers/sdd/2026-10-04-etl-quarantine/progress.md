@@ -12,3 +12,4 @@ Plan (Opus, 2026-10-04): spec, ADRs 0001-0007 and plan written. Prototypes in sc
 Ruling: no LocalStack anywhere (no token) - ADR 0002 - the deployed state machine is proven only by synth assertions
 Ruling: v0.1 includes fix/discard/replay/promote and lineage but not Glue/Athena, the LLM suggester, JSONL or schema diff - ADR 0007 - I9 and I10 unimplemented
 Ruling: no cost-per-million-rows number is published - nothing is deployed, so it cannot be measured - the design's second headline metric waits for a deploy
+Task 1: complete (typecheck exit 0; vitest 1 passed) | commit: "chore: scaffold etl-quarantine package"
