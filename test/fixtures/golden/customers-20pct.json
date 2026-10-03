@@ -1,0 +1,43 @@
+{
+  "status": "HELD",
+  "rowsIn": 200,
+  "rowsValid": 160,
+  "rowsQuarantined": 40,
+  "histogram": [
+    {
+      "instancePath": "",
+      "keyword": "columnCount",
+      "count": 10
+    },
+    {
+      "instancePath": "/email",
+      "keyword": "format",
+      "count": 8
+    },
+    {
+      "instancePath": "/contract_start",
+      "keyword": "format",
+      "count": 7
+    },
+    {
+      "instancePath": "/country",
+      "keyword": "pattern",
+      "count": 5
+    },
+    {
+      "instancePath": "/currency",
+      "keyword": "enum",
+      "count": 5
+    },
+    {
+      "instancePath": "/customer_id",
+      "keyword": "pattern",
+      "count": 3
+    },
+    {
+      "instancePath": "/plan",
+      "keyword": "enum",
+      "count": 2
+    }
+  ]
+}

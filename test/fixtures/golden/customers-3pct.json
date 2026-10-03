@@ -1,0 +1,43 @@
+{
+  "status": "LOADED_WITH_QUARANTINE",
+  "rowsIn": 1000,
+  "rowsValid": 974,
+  "rowsQuarantined": 26,
+  "histogram": [
+    {
+      "instancePath": "/contract_start",
+      "keyword": "format",
+      "count": 5
+    },
+    {
+      "instancePath": "/plan",
+      "keyword": "enum",
+      "count": 5
+    },
+    {
+      "instancePath": "/currency",
+      "keyword": "enum",
+      "count": 4
+    },
+    {
+      "instancePath": "/customer_id",
+      "keyword": "pattern",
+      "count": 4
+    },
+    {
+      "instancePath": "/email",
+      "keyword": "format",
+      "count": 4
+    },
+    {
+      "instancePath": "",
+      "keyword": "columnCount",
+      "count": 2
+    },
+    {
+      "instancePath": "/country",
+      "keyword": "pattern",
+      "count": 2
+    }
+  ]
+}
