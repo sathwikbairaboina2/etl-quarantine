@@ -25,3 +25,4 @@ Task 9: complete (vitest test/pipeline 18 passed total; typecheck exit 0) | comm
 Ruling: added optional Deps.chunkRows override of manifest.chunkRows - plan tests/bench need small chunks (12 rows/5, 100) without mutating the registry - none, defaults to manifest value
 Task 10: complete (parquet 3 passed; typecheck exit 0) | commit: "feat(pipeline): write curated Parquet parts with explicit schema"
 Task 11: complete (validate-transform 7 passed; typecheck exit 0) | commit: "feat(pipeline): validate and transform chunks into pending Parquet and quarantine"
+Task 12: complete (reconcile 9 passed; test/pipeline 37 passed total; typecheck exit 0) | commit: "feat(pipeline): reconcile row accounting, hold over-threshold files, promote"

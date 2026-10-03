@@ -1,0 +1,1001 @@
+customer_id,email,country,currency,amount,contract_start,plan
+C-1,user1@example.com,US,EUR,45619.07,2024-06-14,basic
+C-2,user2@example.com,IT,GBP,87977.32,2024-04-19, Pro 
+C-3,  User3@Example.COM ,PL,GBP,42058.71,2020-05-21,basic
+C-4,user4@example.com,SE,USD,58177.07,2022-07-24,pro
+C-5,user5@example.com,GB,USD,68895.69,2022-12-25,enterprise
+C-6,user6@example.com,IT,GBP,34482.54,2021-06-16,pro
+C-7,user7@example.com,US,GBP,6111.41,2020-09-22,pro
+C-8,user8@example.com,PL,GBP,31609.62,2025-05-17,basic
+C-9,"user9@example.com",SE,EUR,42438.88,2020-09-03,basic
+C-10,user10@example.com,GB,USD,82772.68,2024-02-06,basic
+C-11,user11@example.com,PL,EUR,96467.19,2022-06-13, Pro 
+C-12,user12@example.com,ES,USD,36915.98,2020-02-06,basic
+C-13,user13@example.com,ES,EUR,13343.12,2022-03-01,pro
+C-14,user14@example.com,NL,EUR,28020.20,2024-01-06,pro
+C-15,user15@example.com,SE,EUR,98386.31,2020-01-14,enterprise
+C-16,user16@example.com,SE,GBP,60148.26,2023-12-15,basic
+C-17,user17@example.com,FR,GBP,66583.31,2021-11-21,pro
+C-18,user18@example.com,US,USD,66989.22,2024-06-20,enterprise
+C-19,user19@example.com,FR,GBP,64219.95,2021-09-08,enterprise
+C-20,,DE,GBP,23300.89,2025-09-21,pro
+C-21,user21@example.com,GB,EUR,89408.70,2023-11-27, Enterprise 
+C-22,user22@example.com,DE,USD,58169.84,2024-03-16,pro
+C-23,user23@example.com,ES,USD,51492.15,2020-05-02,basic
+C-24,user24@example.com,US,USD,99472.94,2023-10-23,enterprise
+C-25,  User25@Example.COM ,ES,EUR,76681.79,2022-07-12,pro
+C-26,user26@example.com,PL,USD,8109.77,2021-06-13,pro
+C-27,user27@example.com,ES,gbp,9479.27,2025-04-24,pro
+C-28,,US,eur,26829.65,2024-05-08,basic
+C-29,  User29@Example.COM ,DE,EUR,20255.65,2023-03-15, Basic 
+C-30,user30@example.com,DE,USD,16966.77,2021-01-24,pro
+C-31,user31@example.com,US,GBP,19039.24,2025-08-24,enterprise
+C-32,user32@example.com,DEU,USD,5914.11,2022-09-20,pro
+C-33,user33@example.com,FR,USD,88257.54,2022-06-28,pro
+C-34,user34@example.com,DE,USD,10596.64,2022-08-14,pro
+C-35,user35@example.com,US,USD,40617.53,2022-07-24,basic
+C-36,user36@example.com,US,USD,55186.23,2022-02-05,pro
+C-37,user37@example.com,IT,EUR,11023.54,2025-06-14,basic
+C-38,user38@example.com,GB,GBP,13020.56,2023-03-08,enterprise
+C-39,user39@example.com,FR,GBP,10083.50,2021-01-05,basic
+C-40,user40@example.com,ES,GBP,18731.95,2021-10-15,enterprise
+C-41,  User41@Example.COM ,US,USD,61597.78,2020-09-18,enterprise
+C-42,user42@example.com,FR,GBP,47891.41,2022-01-28,basic
+C-43,user43@example.com,IT,EUR,44925.77,2020-09-28,basic
+C-44,user44@example.com,US,GBP,40151.96,2021-03-16,enterprise
+C-45,"user45@example.com",US,GBP,6649.59,2024-05-03,basic
+C-46,user46@example.com,PL,USD,83068.88,2023-03-17,basic
+C-47,,FR,GBP,82315.70,2020-11-04,basic
+C-48,user48@example.com,SE,GBP,34724.68,2021-08-15,pro
+C-49,user49@example.com,DE,GBP,7867.84,2022-02-13,basic
+C-50,user50@example.com,GB,EUR,50131.16,2020-12-11,basic
+C-51,user51@example.com,NL,GBP,61468.30,2024-08-16,basic
+C-52,user52@example.com,GB,USD,47481.21,2020-11-28,enterprise
+C-53,user53@example.com,IT,USD,61016.62,2022-06-07,basic
+C-54,user54@example.com,US,GBP,89270.28,2021-01-11,enterprise
+C-55,user55@example.com,NL,USD,22267.90,2024-05-09,pro
+C-56,user56@example.com,FR,USD,10629.52,2022-09-17,basic
+C-57,user57@example.com,DE,GBP,81230.91,2023-09-10,basic
+C-58,user58@example.com,US,EUR,52144.85,2020-06-23,enterprise
+C-59,user59@example.com,NL,USD,59261.99,2024-12-22,basic
+C-60,user60@example.com,SE,GBP,35703.46,2025-05-06,enterprise
+C-61,user61@example.com,ES,GBP,50012.15,2025-05-12,pro
+C-62,user62@example.com,DE,GBP,53226.07,2020-03-23,pro
+C-63,user63@example.com,GB,EUR,11725.15,2020-11-06,basic
+C-64,user64@example.com,SE,EUR,50580.63,2021-02-02,basic
+C-65,user65@example.com,NL,EUR,27631.62,2024-10-24,pro
+C-66,user66@example.com,IT,EUR,63058.18,2025-05-16,basic
+C-67,user67@example.com,FR,EUR,30899.84,2023-05-05,pro
+C-68,user68@example.com,SE,USD,11197.41,2022-09-03,pro
+C-69,user69@example.com,SE,GBP,48972.90,2024-12-24,pro
+C-70,,NL,USD,87981.86,2023-09-05,basic
+C-71,user71@example.com,GB,EUR,39022.10,2022-03-22,pro
+C-72,user72@example.com,PL,USD,52477.45,2024-03-05,pro
+C-73,user73@example.com,IT,USD,94906.39,2024-10-21,pro
+C-74,user74@example.com,IT,GBP,56914.12,2024-06-19,enterprise
+C-75,user75@example.com,PL,USD,29958.56,2025-11-14,pro
+C-76,user76@example.com,PL,EUR,48158.85,2024-07-12, Enterprise 
+C-77,user77@example.com,US,EUR,77190.97,2024-12-16,enterprise
+C-78,,DE,GBP,65531.14,2020-04-05,enterprise
+C-79,user79@example.com,FR,GBP,81214.19,2020-06-02,basic
+C-80,user80@example.com,IT,USD,11478.63,2021-09-19,pro
+C-81,user81@example.com,ES,EUR,41102.79,2023-03-10,enterprise
+C-82,,US,USD,91538.23,2024-10-09,enterprise
+C-83,user83@example.com,US,EUR,23668.73,2024-10-20,pro
+C-84,user84@example.com,IT,EUR,79854.93,2023-10-02, Basic 
+C-85,user85@example.com,FR,EUR,33264.62,2021-04-16,pro
+C-86,user86@example.com,SE,EUR,71633.51,2025-09-12,enterprise
+C-87,user87@example.com,IT,GBP,97421.76,2024-11-05,pro
+C-88,user88@example.com,PL,EUR,74723.83,2024-05-04,pro
+C-89,user89@example.com,US,USD,22066.14,2020-08-08,pro
+C-90,user90@example.com,SE,USD,62155.03,2022-01-26,pro
+C-91,user91@example.com,IT,EUR,63195.63,2021-04-28,pro
+C-92,"user92@example.com",NL,GBP,49069.04,2020-04-07,enterprise
+C-93,user93@example.com,US,USD,70429.88,2020-12-23,enterprise
+C-94,,PL,EUR,27885.14,2022-08-22,basic
+C-95,user95@example.com,PL,EUR,21697.77,2025-12-07,basic
+C-96,user96@example.com,ES,USD,56701.04,2025-11-21,pro
+C-97,user97@example.com,GB,GBP,11820.75,2024-02-28,basic
+C-98,user98@example.com,IT,EUR,65552.54,2025-02-22, Basic 
+C-99,user99@example.com,SE,EUR,22719.53,2023-10-09,enterprise
+C-100,user100@example.com,ES,USD,82827.35,2024-11-02,basic
+C-101,,PL,USD,51157.73,2023-09-22,enterprise
+C-102,user102@example.com,DE,GBP,40426.14,2024-09-18,enterprise
+C-103,user103@example.com,ES,USD,53598.49,2021-12-14,enterprise
+C-104,user104@example.com,DE,EUR,99660.98,2022-03-24,pro
+C-105,user105@example.com,SE,GBP,97955.01,2024-10-04,pro
+C-106,,ES,EUR,69110.11,2025-10-08,pro
+C-107,user107@example.com,ES,EUR,73018.59,2024-07-07,pro
+C-108,user108@example.com,IT,USD,45609.56,2024-07-19,basic
+C-109,user109@example.com,GB,GBP,50316.02,2020-11-07,enterprise
+C-110,user110@example.com,US,EUR,88788.77,2022-01-18,basic
+C-111,user111@example.com,DE,USD,65459.48,2025-04-19,basic
+C-112,user112@example.com,ES,GBP,67555.66,2025-10-02,pro
+C-113,user113@example.com,PL,eur,28218.60,2025-09-25,basic
+C-114,user114@example.com,PL,gbp,54916.46,2025-05-16, Basic 
+C-115,user115@example.com,NL,USD,5880.44,2025-10-10,pro
+C-116,user116@example.com,FR,GBP,8167.51,2025-04-19,enterprise
+C-117,user117@example.com,IT,GBP,14553.93,2022-06-09,basic
+C-118,user118@example.com,NL,GBP,81457.22,2020-07-05,pro
+C-119,user119@example.com,US,GBP,63056.33,2024-07-21,basic
+C-120,user120@example.com,GB,EUR,92673.99,2024-03-18,enterprise
+C-121,  User121@Example.COM ,ES,EUR,88515.35,2020-02-01,pro
+C-122,user122@example.com,SE,GBP,59189.97,2025-06-13, Basic 
+C-123,  User123@Example.COM ,US,USD,21108.01,2020-09-25,enterprise
+C-124,user124@example.com,GB,EUR,46089.86,2022-06-06,basic
+C-125,user125@example.com,GB,EUR,42905.35,2020-07-13,enterprise
+C-126,user126@example.com,GB,USD,61621.52,2021-05-25,basic
+C-127,user127@example.com,IT,GBP,88113.45,2021-06-12,enterprise
+C-128,user128@example.com,PL,EUR,75554.58,2024-12-23,pro
+C-129,user129@example.com,PL,GBP,86249.94,2022-12-12,pro
+C-130,user130@example.com,NL,EUR,53915.42,2025-09-07,basic
+C-131,user131@example.com,DE,EUR,65627.09,2024-09-04,enterprise
+C-132,user132@example.com,NL,GBP,36059.17,2022-10-16,basic
+C-133,user133@example.com,NL,EUR,32950.21,2022-12-14,enterprise
+C-134,,DE,USD,15698.57,2022-02-16,basic
+C-135,user135@example.com,IT,EUR,54834.10,2021-04-11,enterprise
+C-136,user136@example.com,GB,EUR,13431.22,2024-10-21,pro
+C-137,user137@example.com,US,GBP,78285.94,2023-10-22,pro
+C-138,user138@example.com,FR,EUR,69244.12,2025-02-09,enterprise
+C-139,user139@example.com,NL,USD,3904.65,2020-04-26,pro
+C-140,user140@example.com,DE,GBP,85836.90,2024-07-06,pro
+C-141,user141@example.com,DE,USD,49098.76,2023-11-04,pro
+C-142,user142@example.com,DE,GBP,41604.52,2025-12-15,enterprise
+C-143,user143@example.com,US,USD,77066.25,2020-10-05, Pro 
+C-144,user144@example.com,PL,GBP,65533.10,2023-11-11,pro
+C-145,user145@example.com,FR,EUR,9156.15,2023-10-28,basic
+C-146,user146@example.com,FR,GBP,14804.56,2024-01-17,enterprise
+C-147,user147@example.com,IT,USD,71947.46,2021-03-06,basic
+C-148,user148@example.com,GB,EUR,24172.95,2024-04-20,enterprise
+C-149,user149@example.com,NL,EUR,90206.86,2025-06-12,enterprise
+C-150,user150@example.com,PL,GBP,17801.44,2022-12-21,enterprise
+C-151,  User151@Example.COM ,DE,USD,8450.97,2024-03-15,enterprise
+C-152,user152@example.com,IT,GBP,11673.22,2023-07-06,pro
+C-153,user153@example.com,FR,EUR,87179.18,2021-12-07,enterprise
+C-154,user154@example.com,IT,GBP,87133.97,2025-02-18,basic
+C-155,user155@example.com,ES,USD,31123.19,2020-05-03,enterprise
+C-156,user156@example.com,FR,GBP,98547.33,2025-04-12,basic
+C-157,user157@example.com,NL,USD,78601.57,2022-07-13,basic
+C-158,user158@example.com,DE,EUR,17491.00,2021-11-15,enterprise
+C-159,user159@example.com,ES,EUR,33940.55,2025-01-11,pro
+C-160,user160@example.com,US,USD,43200.68,2022-07-20,enterprise
+C-161,user161@example.com,SE,EUR,76706.02,2025-06-01,enterprise
+C-162,user162@example.com,GB,EUR,83472.21,2024-08-21,pro
+C-163,user163@example.com,PL,GBP,78867.35,2024-01-12,enterprise
+C-164,user164@example.com,NL,usd,29302.92,2024-04-03,basic
+C-165,  User165@Example.COM ,GB,USD,82979.83,2025-12-04,basic
+C-166,user166@example.com,GB,GBP,56718.29,2022-02-10,basic
+C-167,,IT,EUR,78885.76,2021-09-16,basic
+C-168,user168@example.com,NL,GBP,89228.63,2025-10-09,basic
+C-169,user169@example.com,FR,GBP,29114.24,2025-10-10,basic
+C-170,user170@example.com,FR,GBP,41080.08,2020-12-28,basic
+C-171,name171@,US,gbp,63526.49,2022-09-25,basic
+C-172,user172@example.com,DE,GBP,76326.25,2020-02-25, Pro 
+C-173,"user173@example.com",SE,gbp,82634.93,2020-07-17,basic
+C-174,user174@example.com,NL,USD,13798.13,2021-08-06,pro
+C-175,user175@example.com,SE,USD,54270.95,2020-10-01,enterprise
+C-176,user176@example.com,DE,USD,45828.84,2022-12-09, Enterprise 
+C-177,user177@example.com,NL,GBP,14028.41,2021-10-25,pro
+C-178,user178@example.com,DE,EUR,87239.14,2025-09-17, Enterprise 
+C-179,user179@example.com,NL,EUR,58998.71,2021-11-23,enterprise
+C-180,user180@example.com,DE,GBP,47183.78,2023-04-02,pro
+C-181,user181@example.com,FR,EUR,37118.49,2025-07-07,pro
+C-182,user182@example.com,DE,USD,58601.77,2024-12-26,pro
+C-183,user183@example.com,ES,GBP,58404.67,2020-03-22,basic
+C-184,user184@example.com,NL,EUR,21564.60,2022-01-11,basic
+C-185,user185@example.com,FR,USD,66912.61,18/10/2022,enterprise
+C-186,user186@example.com,US,gbp,91062.31,2021-06-05,basic
+C-187,user187@example.com,PL,EUR,84982.18,2024-09-27,enterprise
+C-188,user188@example.com,NL,GBP,52445.19,2025-09-27,pro
+C-189,user189@example.com,GB,EUR,70782.87,2023-07-09,gold
+C-190,user190@example.com,SE,EUR,32578.92,2022-05-19,enterprise
+C-191,user191@example.com,ES,USD,71684.29,2022-08-25,pro
+C-192,name192@,ES,EUR,2197.38,2022-01-15,enterprise
+C-193,user193@example.com,DE,USD,82893.36,2020-07-26,pro
+C-194,user194@example.com,ES,USD,75944.05,2022-08-08,enterprise
+C-195,user195@example.com,US,USD,78332.51,2025-06-19,basic
+C-196,"user196@example.com",IT,GBP,10118.60,2025-03-12,enterprise
+C-197,user197@example.com,IT,usd,47485.74,2020-09-20,enterprise
+C-198,user198@example.com,DE,eur,70557.29,2021-10-22,enterprise
+C-199,user199@example.com,DE,EUR,61652.20,2024-09-25,pro
+C-200,user200@example.com,FR,GBP,13815.42,2022-12-26,pro
+C-201,user201@example.com,GB,USD,95942.89,2025-08-23,enterprise
+C-202,user202@example.com,PL,GBP,38292.55,2020-09-25,basic
+C-203,user203@example.com,US,GBP,4655.10,2020-09-17,pro
+C-204,user204@example.com,FR,GBP,40076.62,2023-11-06,enterprise
+C-205,user205@example.com,GB,GBP,7975.40,2022-08-11,pro
+C-206,user206@example.com,ES,GBP,89868.46,2022-06-10,basic
+C-207,"user207@example.com",PL,EUR,82224.26,2022-06-12,pro
+C-208,user208@example.com,PL,EUR,66328.67,2020-08-02,pro
+C-209,user209@example.com,PL,USD,55050.11,2021-01-20,pro
+C-210,user210@example.com,ES,GBP,52019.01,2021-03-24,pro
+C-211,user211@example.com,FR,GBP,67995.98,2024-05-17,enterprise
+C-212,user212@example.com,PL,GBP,28849.07,2022-02-24,basic
+C-213,user213@example.com,GB,EUR,66077.20,2022-09-27,basic
+C-214,user214@example.com,IT,GBP,59376.16,2023-09-03,pro
+C-215,user215@example.com,US,GBP,76506.17,2022-03-14,pro
+C-216,user216@example.com,US,EUR,8664.48,2022-02-18,basic
+C-217,user217@example.com,GB,GBP,39326.50,2024-12-17,basic
+C-218,  User218@Example.COM ,PL,USD,20382.09,2025-05-23,enterprise
+C-219,user219@example.com,PL,USD,58244.62,2021-06-14,pro
+C-220,user220@example.com,SE,EUR,27642.09,2024-05-23,basic
+C-221,user221@example.com,DE,EUR,64154.60,2020-01-17,basic
+C-222,user222@example.com,IT,USD,7378.99,2022-11-23,basic
+C-223,user223@example.com,FR,EUR,66437.21,2022-08-04,pro
+C-224,user224@example.com,DE,EUR,17807.76,2020-06-21,basic
+C-225,user225@example.com,DE,USD,12533.30,2023-04-05,basic
+C-226,user226@example.com,SE,GBP,94371.44,2023-07-01, Pro 
+C-227,user227@example.com,SE,USD,61719.13,2023-07-22,basic
+C-228,user228@example.com,US,USD,51979.58,2023-10-11,basic
+C-229,user229@example.com,US,EUR,9252.44,2020-02-03,pro
+C-230,user230@example.com,FR,EUR,9252.47,2025-10-15,basic
+C-231,user231@example.com,PL,GBP,19557.50,2025-01-14,enterprise
+C-232,user232@example.com,GB,EUR,85104.60,2024-01-04, Pro 
+C-233,user233@example.com,PL,GBP,14111.43,2024-01-11,enterprise
+C-234,user234@example.com,SE,USD,31292.93,2022-02-26,basic
+C-235,user235@example.com,ES,USD,47865.75,2024-03-19,pro
+C-236,user236@example.com,FR,USD,77724.55,2025-06-03, Pro 
+C-237,user237@example.com,FR,EUR,70341.70,2020-04-22,basic
+C-238,user238@example.com,GB,EUR,22580.26,2022-11-14,enterprise
+C-239,user239@example.com,US,GBP,5030.10,2024-12-28,enterprise
+C-240,user240@example.com,ES,USD,5304.22,2021-02-11,basic
+C-241,user241@example.com,PL,EUR,45570.04,2025-04-08,basic
+C-242,user242@example.com,GB,EUR,95882.28,2023-05-20,basic
+C-243,user243@example.com,GB,GBP,10744.26,2022-07-14,enterprise
+C-244,,PL,EUR,59930.89,2020-02-01,basic
+C-245,user245@example.com,GB,EUR,30635.79,2023-09-21,pro
+C-246,user246@example.com,DE,EUR,6746.05,2023-06-06,pro
+C-247,user247@example.com,GB,EUR,17890.57,2025-05-13,basic
+C-248,user248@example.com,SE,GBP,19546.78,2023-08-03,enterprise
+C-249,user249@example.com,NL,EUR,56244.19,2022-06-02,basic
+C-250,user250@example.com,ES,EUR,44620.45,2021-10-04,pro
+C-251,user251@example.com,US,USD,52945.21,2021-03-18,enterprise
+C-252,user252@example.com,IT,EUR,94901.84,2020-01-19,pro
+C-253,user253@example.com,ES,GBP,54222.22,2024-02-06,basic
+C-254,user254@example.com,DE,EUR,70455.26,2021-04-27,pro
+C-255,user255@example.com,IT,GBP,10624.74,2020-11-17,enterprise
+C-256,user256@example.com,SE,EUR,59281.97,2021-12-13,enterprise
+C-257,user257@example.com,US,USD,2372.90,2025-05-11,enterprise
+C-258,user258@example.com,ES,GBP,41017.62,2023-10-25,basic
+C-259,  User259@Example.COM ,US,EUR,54265.50,2024-08-20,basic
+C-260,user260@example.com,ES,EURO,21287.93,2022-07-01,pro
+C-261,user261@example.com,SE,EUR,60383.15,2022-09-10,pro
+C-262,user262@example.com,ES,USD,44431.66,2020-10-15,basic
+C-263,user263@example.com,NL,USD,64189.71,2021-09-22,enterprise
+C-264,user264@example.com,DE,GBP,70749.72,2021-04-08,pro
+C-265,user265@example.com,FR,USD,83562.96,2021-11-02,enterprise
+C-266,user266@example.com,GB,USD,13480.07,2020-04-18,enterprise
+C-267,user267@example.com,FR,EUR,35621.38,2022-02-05,enterprise
+C-268,user268@example.com,SE,GBP,7714.79,2023-02-23,enterprise
+C-269,user269@example.com,DE,GBP,73207.65,2022-12-25,pro
+C-270,  User270@Example.COM ,SE,GBP,39035.41,2024-01-06,enterprise
+C-271,user271@example.com,DE,GBP,24360.68,2021-10-22,pro
+C-272,user272@example.com,US,eur,50867.48,2023-06-26,basic
+C-273,user273@example.com,GB,EUR,48733.39,2025-10-21,enterprise
+C-274,user274@example.com,DE,EUR,78766.00,2025-07-02,pro
+C-275,user275@example.com,SE,USD,34426.24,2022-03-14,enterprise
+C-276,"  User276@Example.COM ",DE,EUR,8560.15,2023-12-05,basic
+C-277,user277@example.com,SE,USD,47817.69,2022-04-16,enterprise
+C-278,user278@example.com,PL,EUR,36059.12,2021-02-26,pro
+C-279,user279@example.com,DE,USD,88976.03,2023-05-11,pro
+C-280,user280@example.com,IT,USD,55662.79,2024-07-28,basic
+C-281,  User281@Example.COM ,IT,EUR,88364.47,2020-06-26,pro
+C-282,user282@example.com,DE,EUR,33445.84,2022-09-07,pro
+C-283,user283@example.com,SE,EUR,88585.60,2025-09-02, Basic 
+C-284,user284@example.com,US,GBP,65149.96,2023-10-17,enterprise
+C-285,user285@example.com,FR,GBP,85906.99,2020-08-17,pro
+C-286,user286@example.com,US,EUR,96458.39,2022-12-04,enterprise
+C-287,user287@example.com,US,EUR,79227.89,2020-09-01,enterprise
+C-288,user288@example.com,ES,EUR,29370.01,2023-09-09,pro
+C-289,user289@example.com,DE,EUR,40022.92,2020-06-15,pro
+C-290,user290@example.com,GB,USD,27139.42,2025-05-08,enterprise
+C-291,user291@example.com,PL,GBP,12441.65,2025-07-28,pro
+C-292,user292@example.com,IT,EUR,27175.02,2023-11-13,basic
+C-293,user293@example.com,NL,EUR,51012.77,2020-01-15,basic
+C-294,user294@example.com,ES,EUR,82886.56,2024-09-17,pro
+C-295,user295@example.com,FR,EUR,61428.04,2020-02-14,basic
+C-296,user296@example.com,US,EUR,25767.17,2023-08-14,enterprise
+C-297,user297@example.com,DE,GBP,82595.74,2020-04-02,basic
+C-298,user298@example.com,ES,EUR,94502.59,2020-05-16,enterprise
+C-299,"user299@example.com",DE,USD,70178.80,20/07/2021,pro
+C-300,user300@example.com,IT,USD,67559.05,2025-12-23,basic
+C-301,user301@example.com,GB,EUR,52450.92,2021-09-11,enterprise
+C-302,user302@example.com,DE,USD,81473.79,2025-09-08,pro
+C-303,user303@example.com,ES,GBP,13443.29,2022-06-26,enterprise
+C-304,user304@example.com,PL,USD,44862.85,2025-02-05,enterprise
+C-305,user305@example.com,GB,EUR,47656.33,2021-05-16,basic
+C-306,user306@example.com,DE,GBP,43865.79,2021-07-08,basic
+C-307,user307@example.com,IT,GBP,28592.00,2021-08-11,enterprise
+C-308,,DE,USD,67326.11,2024-11-01,pro
+C-309,user309@example.com,PL,EUR,28946.05,2021-10-13,enterprise
+C-310,user310@example.com,SE,EUR,47524.78,2022-04-04,basic
+C-311,user311@example.com,ES,GBP,13156.17,2025-08-19,basic
+C-312,user312@example.com,NL,GBP,24215.91,2020-05-12,basic
+C-313,user313@example.com,SE,EUR,81655.72,2025-12-23,basic
+C-314,name314@,PL,GBP,46646.38,2020-07-02,enterprise
+C-315,user315@example.com,FR,USD,98054.18,2024-12-25,pro
+C-316,user316@example.com,US,USD,31499.20,2025-10-28,pro
+C-317,user317@example.com,NL,USD,60600.15,2024-09-22,basic
+,user318@example.com,IT,GBP,57185.66,2020-06-13,basic
+C-319,user319@example.com,SE,eur,98522.27,2024-12-18,pro
+C-320,user320@example.com,US,GBP,71425.37,2025-09-04,enterprise
+C-321,user321@example.com,US,EUR,7512.35,2020-01-05,enterprise
+C-322,user322@example.com,US,EUR,82822.04,2022-07-18,basic
+C-323,user323@example.com,US,GBP,83086.20,2023-12-11,basic
+C-324,user324@example.com,SE,GBP,59243.87,2020-06-22,pro
+C-325,user325@example.com,FR,usd,60344.28,2020-02-03,basic
+C-326,user326@example.com,PL,USD,27322.08,2025-06-02,enterprise
+C-327,user327@example.com,US,USD,95867.29,2025-03-12, Pro 
+C-328,user328@example.com,ES,GBP,81808.38,2025-10-14,pro
+C-329,user329@example.com,IT,GBP,90827.27,2025-09-09,basic
+C-330,user330@example.com,DE,GBP,32416.96,2022-01-25,basic
+C-331,user331@example.com,IT,EUR,9420.45,2025-07-26,enterprise
+C-332,user332@example.com,GB,EUR,64207.42,2024-11-02,basic
+C-333,user333@example.com,SE,GBP,12589.21,2024-06-28,enterprise
+C-334,user334@example.com,US,USD,72468.01,2024-05-28,basic
+C-335,user335@example.com,FR,EUR,33175.48,2020-08-16,enterprise
+C-336,user336@example.com,SE,USD,99542.19,2020-08-01,basic
+C-337,user337@example.com,ES,USD,50380.07,2025-02-02,enterprise
+C-338,user338@example.com,GB,eur,88142.01,2023-03-08,enterprise
+C-339,user339@example.com,GB,USD,1218.59,2025-05-25,basic
+C-340,user340@example.com,GB,USD,23482.69,2024-04-06,enterprise
+C-341,user341@example.com,IT,GBP,98530.80,2024-10-18,basic
+C-342,user342@example.com,GB,EUR,23730.07,2020-02-04,enterprise
+C-343,user343@example.com,FR,EUR,4671.51,2025-07-09,enterprise
+C-344,user344@example.com,NL,EUR,37830.00,2024-09-21,basic
+C-345,user345@example.com,FR,USD,71330.73,2025-01-01,pro
+C-346,user346@example.com,DE,USD,82208.55,2020-09-15,pro
+C-347,user347@example.com,DE,GBP,60581.94,2023-06-14,enterprise
+C-348,user348@example.com,GB,EUR,20138.39,2020-03-11,pro
+C-349,user349@example.com,US,USD,28526.79,2024-03-27, Basic 
+C-350,user350@example.com,DE,EUR,86307.89,2023-11-19,basic
+C-351,user351@example.com,US,USD,33444.85,2023-02-13,enterprise
+C-352,user352@example.com,FR,GBP,30394.79,2024-09-09,pro
+C-353,user353@example.com,PL,USD,72310.31,2022-01-03,basic
+C-354,  User354@Example.COM ,SE,EUR,59293.15,2024-07-23,pro
+C-355,user355@example.com,ES,GBP,41265.54,2020-12-28,pro
+C-356,user356@example.com,FR,USD,32238.21,2025-11-07,basic
+C-357,  User357@Example.COM ,PL,EUR,73477.45,2025-08-20,basic
+C-358,  User358@Example.COM ,NL,gbp,85542.07,2020-09-24,basic
+C-359,user359@example.com,ES,usd,92079.25,2023-03-17,enterprise
+C-360,user360@example.com,IT,GBP,87164.15,2021-09-16,enterprise
+C-361,user361@example.com,US,EUR,47443.14,2025-06-24,pro
+C-362,"user362@example.com",PL,EUR,48367.44,2023-07-08,basic
+C-363,user363@example.com,PL,USD,735.05,2020-07-15,pro
+C-364,user364@example.com,FR,USD,12667.78,2020-01-26,basic
+C-365,user365@example.com,NL,EUR,97980.83,2025-08-28,basic
+C-366,user366@example.com,FR,GBP,92932.77,2020-11-20,basic
+C-367,user367@example.com,SE,USD,78583.94,2025-02-09,pro
+C-368,user368@example.com,IT,EUR,57472.57,2020-04-10,pro
+C-369,user369@example.com,PL,EUR,16800.16,2022-12-19,pro
+C-370,user370@example.com,FR,GBP,46623.42,2025-07-15,pro
+C-371,user371@example.com,ES,GBP,39794.94,2022-03-25,enterprise
+C-372,user372@example.com,NL,eur,86603.01,2023-12-25,basic
+C-373,  User373@Example.COM ,SE,EUR,67271.52,2023-11-06,pro
+C-374,user374@example.com,US,GBP,12295.54,2021-05-08,pro
+C-375,user375@example.com,SE,GBP,4245.69,2023-07-25,enterprise
+C-376,user376@example.com,PL,EUR,29317.32,2024-10-27,basic
+C-377,user377@example.com,SE,USD,88984.11,2023-07-26,basic
+C-378,user378@example.com,SE,EUR,16723.11,2020-10-03,enterprise
+C-379,user379@example.com,SE,EUR,81266.67,2020-03-21,pro
+C-380,user380@example.com,GB,USD,81789.55,2020-06-04,pro
+C-381,user381@example.com,ES,USD,17928.82,2025-08-18,basic
+C-382,user382@example.com,SE,USD,67444.18,2020-08-27,enterprise
+C-383,user383@example.com,DE,usd,64582.11,2022-05-08,pro
+C-384,user384@example.com,GB,EUR,24930.99,2022-09-04,enterprise
+C-385,user385@example.com,SE,EUR,94167.01,2021-01-02,basic
+C-386,user386@example.com,IT,GBP,41206.70,2024-01-05,basic
+C-387,user387@example.com,PL,USD,83006.26,2025-10-10,basic
+C-388,user388@example.com,FR,EUR,40922.25,2023-12-14,basic
+C-389,user389@example.com,ES,USD,13467.46,2020-10-01,pro
+C-390,user390@example.com,FR,GBP,43100.69,2022-03-12,enterprise
+C-391,user391@example.com,IT,GBP,87667.35,2023-03-07,basic
+C-392,user392@example.com,SE,eur,45175.28,2025-05-27, Enterprise 
+C-393,user393@example.com,PL,EUR,67914.57,2025-08-17,enterprise
+C-394,user394@example.com,FR,USD,7316.19,2021-08-01,basic
+C-395,,GB,GBP,6578.90,2025-09-23,enterprise
+C-396,user396@example.com,PL,EUR,82051.87,2024-05-04,pro
+C-397,user397@example.com,SE,EUR,1748.51,2022-06-13,pro
+C-398,user398@example.com,US,GBP,9978.40,2024-01-01,enterprise
+C-399,user399@example.com,ES,GBP,40438.93,2023-10-01,pro
+C-400,user400@example.com,FR,USD,49167.54,2023-09-01,pro
+C-401,user401@example.com,DE,GBP,59681.69,2022-04-08,pro
+C-402,,PL,EUR,70123.60,2025-01-19,pro
+C-403,user403@example.com,ES,EUR,90239.77,2022-03-14,enterprise
+C-404,user404@example.com,ES,EUR,67268.27,2023-06-03,basic
+C-405,user405@example.com,NL,USD,11514.57,2025-06-25,pro
+C-406,user406@example.com,DE,GBP,84485.78,2022-12-15,basic
+C-407,user407@example.com,IT,EUR,9085.06,2021-02-23,enterprise
+C-408,user408@example.com,FR,USD,73922.36,2023-05-12,basic
+C-409,user409@example.com,SE,GBP,25322.96,2023-01-19,basic
+C-410,user410@example.com,DE,EUR,96608.72,2022-11-15,enterprise
+C-411,user411@example.com,NL,GBP,88552.61,2021-07-11,enterprise
+C-412,user412@example.com,SE,EUR,54618.27,2021-10-06,enterprise
+C-413,user413@example.com,SE,EUR,81073.65,2023-10-02,basic
+C-414,"user414@example.com",ES,USD,9235.25,2025-09-24,enterprise
+C-415,user415@example.com,SE,GBP,78003.86,2020-12-05,basic
+C-416,user416@example.com,FR,EUR,61002.20,2020-07-19,pro
+C-417,user417@example.com,SE,GBP,78301.15,2021-11-13,pro
+C-418,  User418@Example.COM ,IT,USD,93443.59,2022-12-02,enterprise
+C-419,user419@example.com,PL,EUR,55399.07,2024-07-15,pro
+C-420,user420@example.com,DE,GBP,69999.61,2023-06-23,enterprise
+C-421,user421@example.com,IT,USD,36849.17,2024-12-01,enterprise
+C-422,user422@example.com,SE,EUR,63283.25,2021-09-25,pro
+C-423,user423@example.com,IT,usd,26279.45,2023-02-19,pro
+C-424,user424@example.com,NL,USD,17474.48,2025-12-10,enterprise
+C-425,user425@example.com,NL,gbp,60641.66,2020-08-12,basic
+C-426,user426@example.com,IT,EUR,82709.85,2021-11-28,basic
+C-427,user427@example.com,PL,eur,37399.43,2023-10-18,enterprise
+C-428,user428@example.com,IT,GBP,19898.78,2023-12-07,pro
+C-429,user429@example.com,PL,GBP,82404.79,2022-12-28, Basic 
+C-430,user430@example.com,PL,EURO,43563.91,2024-01-22,pro
+C-431,user431@example.com,FR,EUR,8815.23,2020-03-14,pro
+C-432,user432@example.com,ES,USD,82636.96,2021-09-22,enterprise
+C-433,user433@example.com,ES,USD,20133.28,2020-06-23,basic
+C-434,user434@example.com,IT,usd,45510.61,2024-05-23,pro
+C-435,,SE,GBP,19581.40,2025-01-05,pro
+C-436,user436@example.com,IT,GBP,21226.40,2020-03-16,enterprise
+C-437,user437@example.com,NL,USD,81895.08,2023-07-02,pro
+C-438,user438@example.com,GB,USD,75725.61,2023-08-21,pro
+C-439,user439@example.com,ES,GBP,59914.64,2024-12-24,pro
+C-440,user440@example.com,SE,USD,940,82,2023-10-22,enterprise
+C-441,user441@example.com,IT,GBP,42990.76,2023-12-20,enterprise
+C-442,user442@example.com,ES,GBP,65890.68,2021-01-16,pro
+C-443,user443@example.com,US,EUR,19746.47,2022-08-10,pro
+C-444,user444@example.com,US,EUR,34238.88,2020-03-03,enterprise
+C-445,user445@example.com,GB,EUR,44270.37,2021-08-20,enterprise
+C-446,user446@example.com,SE,EUR,18740.96,2022-05-25,basic
+C-447,user447@example.com,IT,GBP,72515.17,2022-03-19,basic
+C-448,user448@example.com,IT,GBP,72934.22,2024-09-26,basic
+C-449,user449@example.com,US,GBP,4484.88,2025-01-25,basic
+C-450,user450@example.com,US,EUR,12712.38,2021-08-18, Basic 
+C-451,user451@example.com,NL,USD,54808.68,2020-11-08,enterprise
+C-452,user452@example.com,US,EUR,12508.02,2025-07-19,pro
+C-453,user453@example.com,FR,EUR,25965.63,2021-03-17, Basic 
+C-454,user454@example.com,GB,USD,22017.26,2021-11-14,basic
+C-455,"user455@example.com",DE,USD,39480.31,2021-06-15,basic
+C-456,user456@example.com,US,GBP,65795.72,2020-03-01,enterprise
+C-457,user457@example.com,NL,USD,70371.14,2020-09-22,basic
+C-458,user458@example.com,ES,GBP,41479.74,2025-05-02,pro
+C-459,user459@example.com,FR,EUR,9029.05,2025-09-24,pro
+C-460,user460@example.com,SE,GBP,18934.09,2022-01-04,pro
+C-461,"user461@example.com",FR,GBP,23789.83,2021-11-19, Pro 
+C-462,,DE,EUR,49122.25,2024-07-09,basic
+C-463,user463@example.com,US,GBP,25217.62,2023-09-23,basic
+C-464,"user464@example.com",DE,GBP,54915.03,2023-05-23,pro
+C-465,user465@example.com,US,GBP,17200.41,2022-10-16,pro
+C-466,user466@example.com,ES,GBP,6055.11,2025-11-11,basic
+C-467,user467@example.com,PL,usd,56177.68,2022-08-11,basic
+C-468,user468@example.com,FR,GBP,51943.79,2024-03-10,enterprise
+C-469,user469@example.com,DE,USD,5869.04,2024-01-06,pro
+C-470,user470@example.com,PL,USD,20618.48,2023-11-18,basic
+C-471,user471@example.com,ES,USD,70074.17,2024-07-10,enterprise
+C-472,"user472@example.com",DE,GBP,79181.87,2023-12-19,enterprise
+C-473,user473@example.com,NL,gbp,35394.58,2020-05-16,enterprise
+C-474,user474@example.com,US,usd,68484.09,2023-06-25,enterprise
+C-475,user475@example.com,ES,GBP,24043.70,2025-01-28,enterprise
+C-476,user476@example.com,US,EUR,73185.89,2024-10-16,basic
+C-477,,DE,USD,94705.03,2023-10-05,enterprise
+C-478,user478@example.com,IT,GBP,66224.25,2023-11-16,enterprise
+C-479,,FR,GBP,33809.49,2022-12-16,enterprise
+C-480,user480@example.com,GB,EUR,63241.55,2022-11-15,basic
+C-481,user481@example.com,US,GBP,59537.71,2022-05-03,enterprise
+C-482,user482@example.com,US,USD,89065.28,2020-05-22,basic
+C-483,user483@example.com,NL,GBP,97750.14,2021-08-01,enterprise
+C-484,user484@example.com,PL,USD,50060.99,2021-01-08,enterprise
+C-485,user485@example.com,US,GBP,79465.25,2022-10-18,enterprise
+C-486,user486@example.com,SE,GBP,47995.91,2021-03-11,pro
+C-487,user487@example.com,ES,USD,92959.97,2021-03-21,pro
+C-488,user488@example.com,GB,USD,32853.41,2023-01-11,enterprise
+C-489,user489@example.com,ES,GBP,53121.19,2023-08-06,pro
+C-490,user490@example.com,ES,EUR,23358.36,2024-09-14,enterprise
+C-491,user491@example.com,PL,EUR,86637.43,2021-12-05,basic
+C-492,user492@example.com,PL,GBP,98685.43,2021-12-15,pro
+C-493,user493@example.com,GB,GBP,93644.94,2023-01-13,basic
+C-494,user494@example.com,FR,EUR,5219.90,2020-03-26,basic
+C-495,user495@example.com,SE,USD,65874.91,2022-12-04,pro
+C-496,user496@example.com,PL,EUR,70109.93,2022-02-21,basic
+C-497,user497@example.com,US,GBP,28101.69,2020-11-10,pro
+C-498,user498@example.com,SE,USD,68397.89,2020-06-15,basic
+C-499,user499@example.com,GB,eur,8494.82,2024-12-16,enterprise
+C-500,user500@example.com,US,USD,91474.60,2025-04-25,enterprise
+C-501,user501@example.com,ES,EUR,13371.09,2024-10-25,basic
+C-502,user502@example.com,GB,usd,29252.49,2025-09-08,basic
+C-503,user503@example.com,IT,EUR,38372.62,2020-12-24,enterprise
+C-504,user504@example.com,FR,USD,4231.04,2020-09-05,enterprise
+C-505,user505@example.com,IT,GBP,91226.78,2023-01-01,enterprise
+C-506,user506@example.com,GB,USD,66359.93,2020-11-01,enterprise
+C-507,,ES,GBP,42330.72,2022-01-20,enterprise
+C-508,user508@example.com,ES,GBP,27703.51,2024-01-10,basic
+C-509,user509@example.com,SE,GBP,83888.48,2020-03-11,basic
+C-510,  User510@Example.COM ,ES,GBP,16874.27,2022-01-24, Enterprise 
+C-511,user511@example.com,FR,GBP,93841.94,2025-12-23,pro
+C-512,"user512@example.com",FR,USD,67707.62,2020-06-23,pro
+C-513,user513@example.com,NL,GBP,43706.80,2020-09-27,basic
+C-514,user514@example.com,PL,GBP,36192.02,2022-10-04,enterprise,surprise
+C-515,user515@example.com,FR,GBP,87792.40,2021-09-14,enterprise
+C-516,user516@example.com,GB,GBP,27672.66,2020-03-01,basic
+C-517,user517@example.com,NL,eur,95603.10,2022-03-11,enterprise
+C-518,user518@example.com,GB,GBP,35797.84,2023-08-26,pro
+,user519@example.com,US,GBP,738.51,2021-11-19,basic
+C-520,user520@example.com,US,GBP,63036.65,2021-04-12,pro
+C-521,user521@example.com,PL,GBP,81674.64,2021-11-02,basic
+C-522,user522@example.com,IT,GBP,81452.33,2025-11-09,basic
+C-523,user523@example.com,NL,GBP,10022.38,2022-05-23,enterprise
+C-524,user524@example.com,SE,USD,7909.62,2024-07-04,enterprise
+C-525,user525@example.com,US,eur,55254.67,2023-02-12,basic
+C-526,user526@example.com,GB,USD,12753.87,2022-08-04,basic
+C-527,user527@example.com,NL,EUR,56883.34,2022-10-18,pro
+C-528,user528@example.com,ES,EUR,20662.19,2021-07-02, Basic 
+C-529,,FR,USD,3056.69,2023-12-05,basic
+C-530,  User530@Example.COM ,SE,USD,42636.97,2023-02-18,basic
+C-531,user531@example.com,FR,EUR,35886.30,2021-04-26,enterprise
+C-532,user532@example.com,PL,USD,37209.43,2023-11-03,pro
+C-533,user533@example.com,ES,USD,47452.96,2025-04-09,basic
+C-534,  User534@Example.COM ,GB,GBP,54546.47,2022-07-05,enterprise
+C-535,user535@example.com,US,GBP,23683.80,2024-08-11,basic
+C-536,user536@example.com,PL,GBP,64723.06,2020-10-09,basic
+C-537,  User537@Example.COM ,SE,USD,23836.69,2025-11-19,basic
+C-538,user538@example.com,US,EUR,1334.54,2023-07-21,pro
+C-539,user539@example.com,DE,GBP,13423.64,2025-09-20,enterprise
+C-540,"user540@example.com",GB,USD,16967.95,2021-10-08,basic
+C-541,user541@example.com,GB,EUR,38086.57,2025-05-09,pro
+C-542,user542@example.com,SE,USD,48622.32,2024-12-25,basic
+C-543,"  User543@Example.COM ",DE,USD,36653.88,2021-04-20,basic
+C-544,user544@example.com,PL,USD,26632.14,2024-11-05,pro
+C-545,user545@example.com,DE,EUR,77288.25,2025-04-18,pro
+C-546,user546@example.com,GB,USD,83893.46,2022-09-18,pro
+C-547,user547@example.com,US,GBP,69396.79,2022-06-22,enterprise
+C-548,user548@example.com,ES,EUR,62760.84,2022-08-23,pro
+C-549,user549@example.com,SE,GBP,31602.30,2023-06-01,basic
+C-550,user550@example.com,NL,GBP,90918.37,2020-01-03,pro
+C-551,user551@example.com,ES,GBP,18280.08,2021-04-23,basic
+C-552,user552@example.com,GB,GBP,86116.70,2025-04-22, Enterprise 
+C-553,user553@example.com,NL,USD,81606.32,2021-01-25,basic
+C-554,user554@example.com,SE,USD,80751.69,2020-07-12, Basic 
+C-555,user555@example.com,GB,GBP,14396.35,2021-09-27,pro
+C-556,user556@example.com,SE,USD,47683.04,2025-05-08,basic
+C-557,user557@example.com,SE,USD,81473.26,28/11/2021,pro
+C-558,user558@example.com,US,EUR,82486.51,2025-07-05,basic
+C-559,user559@example.com,SE,USD,51542.59,2021-04-15,basic
+C-560,user560@example.com,IT,GBP,49730.55,2025-08-24,basic
+C-561,,SE,USD,11698.00,2024-01-22,enterprise
+C-562,user562@example.com,GB,USD,81627.22,2024-04-07,pro
+C-563,,ES,EUR,3666.01,2022-11-24,enterprise
+C-564,user564@example.com,NL,usd,5192.08,2024-08-18,basic
+C-565,user565@example.com,GB,GBP,26331.67,2022-12-06,pro
+C-566,,US,GBP,35195.30,2022-11-21,pro
+C-567,user567@example.com,IT,USD,76984.61,2025-07-03,basic
+C-568,user568@example.com,SE,GBP,1757.03,2024-07-28,basic
+C-569,user569@example.com,US,USD,80810.63,2024-01-25,enterprise
+C-570,user570@example.com,NL,EUR,37542.43,2022-10-17,pro
+C-571,user571@example.com,GB,USD,86610.32,2025-12-05,enterprise
+C-572,user572@example.com,SE,EUR,55893.59,2023-10-08,basic
+C-573,user573@example.com,ES,EUR,91448.27,2021-06-08,enterprise
+C-574,user574@example.com,FR,EUR,38297.45,2020-11-16,pro
+C-575,user575@example.com,FR,USD,76705.17,2022-07-20,enterprise
+C-576,user576@example.com,FR,gbp,85753.47,2025-06-27,pro
+C-577,user577@example.com,FR,EUR,42533.72,2022-07-28,basic
+C-578,user578@example.com,DE,GBP,25563.09,2023-12-16,basic
+C-579,user579@example.com,FR,USD,43401.47,2020-09-12,basic
+C-580,user580@example.com,ES,EUR,87447.62,2022-01-06,basic
+C-581,  User581@Example.COM ,SE,USD,56846.15,2023-04-17,enterprise
+C-582,user582@example.com,IT,EUR,39463.37,2021-05-13,pro
+C-583,user583@example.com,NL,usd,52189.10,2023-04-08,pro
+C-584,user584@example.com,FR,EUR,96036.99,2020-01-01,basic
+C-585,user585@example.com,SE,GBP,14678.56,2025-03-23,basic
+C-586,user586@example.com,PL,GBP,66409.72,2021-11-22, Enterprise 
+C-587,user587@example.com,IT,gbp,87831.17,2022-07-22,pro
+C-588,user588@example.com,FR,EUR,89586.19,2024-09-23,basic
+C-589,  User589@Example.COM ,FR,GBP,49544.42,2025-12-04,pro
+C-590,user590@example.com,IT,USD,79622.89,2021-05-18,basic
+C-591,user591@example.com,PL,EUR,98609.45,2023-06-24,enterprise
+C-592,user592@example.com,IT,gbp,90346.25,2022-11-08,pro
+C-593,user593@example.com,PL,EUR,31602.30,2022-04-06,basic
+C-594,user594@example.com,IT,GBP,70962.24,2024-01-17,pro
+C-595,user595@example.com,ES,GBP,63559.48,2020-04-05,enterprise
+C-596,user596@example.com,ES,USD,76542.26,2020-06-21,enterprise
+C-597,user597@example.com,IT,USD,22218.80,2025-11-18,basic
+C-598,user598@example.com,IT,EUR,48547.73,2022-05-05,basic
+C-599,user599@example.com,FR,USD,68429.26,2020-06-06,pro
+C-600,user600@example.com,GB,EUR,99931.46,2022-01-15, Basic 
+C-601,user601@example.com,US,EUR,78043.39,2025-01-03,pro
+C-602,,NL,GBP,68476.58,2023-08-22,pro
+C-603,user603@example.com,FR,USD,99466.29,2023-10-03,pro
+C-604,user604@example.com,DE,GBP,97876.30,2021-09-21,basic
+C-605,user605@example.com,IT,USD,47601.35,2025-05-21,pro
+C-606,user606@example.com,ES,EUR,1483.82,2023-04-27,pro
+C-607,user607@example.com,ES,GBP,17276.97,2022-04-15,basic
+C-608,user608@example.com,PL,EUR,17334.36,2024-08-09,enterprise
+C-609,user609@example.com,ES,EUR,70825.89,2023-07-21,pro
+C-610,user610@example.com,FR,GBP,27235.44,2022-06-23,pro
+C-611,user611@example.com,SE,EUR,27316.12,2021-11-11,pro
+C-612,user612@example.com,US,EUR,41826.14,2021-08-28,pro
+C-613,user613@example.com,FR,EUR,32973.20,2022-02-16,pro
+C-614,user614@example.com,US,USD,93789.62,2022-11-26,basic
+C-615,user615@example.com,ES,EUR,67275.04,2023-12-28,pro
+C-616,user616@example.com,ES,EUR,93255.86,2024-06-07,enterprise
+C-617,user617@example.com,PL,USD,75454.90,2021-06-07,enterprise
+C-618,user618@example.com,FR,GBP,56338.93,2023-10-17,basic
+C-619,user619@example.com,NL,GBP,39128.81,2021-08-20,basic
+C-620,user620@example.com,GB,GBP,36096.52,2023-10-05,enterprise
+C-621,user621@example.com,GB,USD,59040.14,2023-08-05,basic
+C-622,user622@example.com,US,gbp,29824.16,2021-02-04,pro
+C-623,  User623@Example.COM ,FR,EUR,54773.51,2020-05-19,enterprise
+C-624,user624@example.com,DE,EUR,34593.01,2025-12-23,pro
+C-625,  User625@Example.COM ,FR,GBP,60540.15,2020-01-07,pro
+C-626,  User626@Example.COM ,SE,USD,93504.69,2023-03-21,basic
+C-627,user627@example.com,GB,EUR,1777.52,2022-11-23,basic
+C-628,user628@example.com,IT,GBP,67948.30,2020-04-26,pro
+C-629,  User629@Example.COM ,DE,GBP,76150.48,2023-04-03,basic
+C-630,user630@example.com,GB,USD,73574.88,2025-02-16,enterprise
+C-631,user631@example.com,GB,USD,56490.44,2025-09-19,enterprise
+C-632,user632@example.com,IT,GBP,48644.29,2025-04-20,pro
+C-633,user633@example.com,DE,EUR,82814.29,2022-10-12,pro
+C-634,user634@example.com,GB,EUR,95212.94,2020-10-26,pro
+C-635,user635@example.com,NL,EUR,5812.79,2022-07-04,enterprise
+C-636,user636@example.com,NL,GBP,52482.07,2025-01-06, Pro 
+C-637,user637@example.com,PL,USD,81084.32,2021-03-21,pro
+C-638,user638@example.com,FR,EUR,32724.53,2022-06-03,enterprise
+C-639,user639@example.com,FR,EUR,86043.51,2022-04-16,enterprise
+C-640,user640@example.com,SE,usd,53377.68,2023-12-16,enterprise
+C-641,user641@example.com,GB,GBP,96555.28,2021-12-13,pro
+C-642,user642@example.com,DE,EUR,97663.22,2020-10-05,basic
+C-643,user643@example.com,ES,GBP,17094.62,2022-02-19,pro
+C-644,user644@example.com,PL,GBP,4869.33,2022-11-01,enterprise
+C-645,user645@example.com,SE,GBP,54602.27,2020-02-23,basic
+C-646,user646@example.com,NL,GBP,71635.06,2023-03-19,basic
+C-647,user647@example.com,PL,GBP,6301.93,2020-10-17,pro
+C-648,user648@example.com,NL,USD,42448.76,2023-04-09,enterprise
+C-649,user649@example.com,IT,EUR,8440.90,2025-01-10,basic
+C-650,user650@example.com,IT,USD,32756.73,2024-04-05,enterprise
+C-651,user651@example.com,PL,USD,21645.68,2022-08-08,basic
+C-652,user652@example.com,NL,USD,1088.06,2021-06-26,enterprise
+C-653,user653@example.com,FR,USD,763.24,2021-06-07,basic
+C-654,user654@example.com,NL,GBP,19734.88,2023-01-04,pro
+C-655,user655@example.com,IT,EUR,72145.41,2021-04-28,pro
+C-656,,SE,USD,62329.00,2020-03-19,pro
+C-657,user657@example.com,SE,GBP,55218.95,2021-06-01,basic
+C-658,user658@example.com,IT,GBP,28585.89,2024-06-22,basic
+C-659,"user659@example.com",NL,GBP,5034.47,2025-03-01,pro
+C-660,user660@example.com,GB,EUR,77265.66,2021-05-19,pro
+C-661,user661@example.com,US,GBP,23764.08,2020-09-02,pro
+C-662,user662@example.com,GB,EUR,20740.46,2023-01-10,pro
+C-663,user663@example.com,IT,EUR,79632.86,2020-12-04,basic
+C-664,user664@example.com,IT,EUR,21087.03,2022-08-09,basic
+C-665,user665@example.com,DE,USD,57929.52,2022-11-04,enterprise
+C-666,user666@example.com,SE,GBP,59642.58,2025-04-14,enterprise
+C-667,user667@example.com,ES,EUR,71918.09,2022-10-26,pro
+C-668,user668@example.com,SE,USD,9378.46,2022-01-14,pro
+C-669,user669@example.com,DE,gbp,45835.55,2020-01-15,pro
+C-670,user670@example.com,IT,EUR,74091.51,2020-06-13,pro
+C-671,user671@example.com,DE,USD,13170.75,2024-02-10,basic
+C-672,user672@example.com,GB,USD,75168.48,2023-06-10,basic
+C-673,user673@example.com,IT,EUR,47211.01,2024-10-17,basic
+C-674,  User674@Example.COM ,NL,USD,94437.63,2020-04-15,enterprise
+C-675,user675@example.com,PL,USD,3937.25,2022-03-18, Pro 
+C-676,user676@example.com,GB,GBP,55381.82,2022-06-21,enterprise
+C-677,user677@example.com,GB,EUR,14341.06,2025-08-11,pro
+C-678,user678@example.com,PL,USD,34129.78,2021-03-12,enterprise
+C-679,user679@example.com,DE,GBP,37483.16,2022-05-01,basic
+C-680,user680@example.com,ES,GBP,75327.63,2020-01-07,enterprise
+C-681,user681@example.com,ES,EUR,72156.97,2020-08-28,pro
+C-682,user682@example.com,US,USD,39517.45,2025-01-27,enterprise
+C-683,  User683@Example.COM ,GB,USD,77284.07,2022-05-10,enterprise
+C-684,user684@example.com,IT,GBP,80747.07,2020-02-13, Pro 
+C-685,user685@example.com,FR,EUR,87482.49,2022-10-19,pro
+C-686,user686@example.com,FR,EUR,5958.73,2022-09-03,pro
+C-687,user687@example.com,ES,USD,40518.04,2021-09-06,enterprise
+C-688,user688@example.com,GB,USD,42734.05,2023-05-16, Basic 
+C-689,user689@example.com,PL,GBP,45095.78,2024-07-26,pro
+C-690,user690@example.com,US,EUR,12088.42,2021-06-06,enterprise
+C-691,user691@example.com,IT,GBP,5964.41,2023-03-28,pro
+C-692,user692@example.com,IT,GBP,27034.70,2024-02-28,pro
+C-693,user693@example.com,DE,USD,87056.70,2020-09-26,pro
+C-694,user694@example.com,FR,USD,18923.88,2025-09-13,basic
+C-695,user695@example.com,FR,GBP,17254.85,2022-09-03,pro
+C-696,user696@example.com,IT,EUR,56630.46,2022-12-18,basic
+C-697,user697@example.com,DE,USD,218.53,2021-10-25,basic
+C-698,"user698@example.com",DE,USD,15711.92,2023-09-14,basic
+C-699,user699@example.com,ES,GBP,34583.24,2020-04-11,basic
+C-700,user700@example.com,GB,eur,86514.91,2024-07-05,enterprise
+C-701,user701@example.com,DE,GBP,72756.49,2025-09-14,enterprise
+C-702,user702@example.com,NL,usd,5923.95,2025-11-18,enterprise
+C-703,"user703@example.com",GB,USD,39053.65,2020-07-12, Enterprise 
+C-704,user704@example.com,GB,EUR,69639.10,2023-04-28,enterprise
+C-705,user705@example.com,FR,USD,12623.05,2021-01-07,basic
+C-706,user706@example.com,ES,EUR,74226.87,2023-11-26,pro
+C-707,user707@example.com,PL,EUR,69848.13,2022-07-09,pro
+C-708,"user708@example.com",SE,USD,5807.07,2025-11-25, Enterprise 
+C-709,user709@example.com,GB,EUR,95675.61,2024-07-11, Enterprise 
+C-710,user710@example.com,ES,EUR,44546.19,2024-12-18,basic
+C-711,user711@example.com,ES,USD,7188.42,2024-05-04,basic
+C-712,user712@example.com,IT,USD,48330.32,2024-03-04,pro
+C-713,user713@example.com,SE,USD,53841.67,2022-09-27,basic
+C-714,user714@example.com,NL,GBP,88447.39,2020-01-04,basic
+C-715,user715@example.com,ES,EUR,90441.04,2021-06-01, Basic 
+C-716,"user716@example.com",FR,EUR,91088.18,2024-10-10, Basic 
+C-717,user717@example.com,NL,EUR,15503.21,2025-10-28,basic
+C-718,user718@example.com,DE,GBP,94546.39,2023-05-02,basic
+C-719,user719@example.com,NL,GBP,53220.19,2025-09-27,pro
+C-720,user720@example.com,PL,GBP,83618.37,2025-12-18,enterprise
+C-721,user721@example.com,US,EUR,65593.66,2020-09-17,pro
+C-722,user722@example.com,NL,GBP,43618.90,2020-11-20,enterprise
+C-723,user723@example.com,PL,USD,45194.66,2023-03-10,basic
+C-724,  User724@Example.COM ,ES,USD,94473.23,2022-03-15,enterprise
+C-725,user725@example.com,US,USD,27449.40,2023-10-25,enterprise
+C-726,user726@example.com,IT,GBP,66136.27,2020-05-05,enterprise
+C-727,user727@example.com,IT,USD,72544.36,2024-06-17,pro
+C-728,user728@example.com,SE,GBP,65267.74,2021-10-06,basic
+C-729,user729@example.com,NL,EUR,57383.13,2020-04-19,basic
+C-730,user730@example.com,NL,EUR,514.66,2025-01-18,pro
+C-731,user731@example.com,ES,USD,31021.90,2021-03-08,enterprise
+C-732,  User732@Example.COM ,FR,EUR,50624.42,2025-08-16,pro
+C-733,user733@example.com,SE,GBP,96816.30,2023-04-14,pro
+C-734,user734@example.com,SE,USD,11016.91,2021-04-04,pro
+C-735,user735@example.com,FR,GBP,22574.25,2022-07-14,pro
+C-736,user736@example.com,ES,EUR,23234.04,2022-02-08,pro
+C-737,user737@example.com,GB,GBP,84071.27,2022-09-11,enterprise
+C-738,user738@example.com,US,EUR,6792.39,2020-04-21,basic
+C-739,user739@example.com,SE,USD,23973.56,2025-06-26,pro
+C-740,user740@example.com,IT,USD,45669.23,2024-08-12,enterprise
+C-741,user741@example.com,FR,EUR,18027.90,2021-01-05,enterprise
+C-742,user742@example.com,DE,EUR,13265.23,2022-08-25,enterprise
+C-743,user743@example.com,SE,EUR,75118.74,2024-11-02,basic
+C-744,user744@example.com,GB,USD,24920.98,2020-12-24,basic
+C-745,user745@example.com,PL,GBP,37309.10,2021-07-18,pro
+C-746,user746@example.com,FR,GBP,83869.39,2020-12-17,basic
+C-747,user747@example.com,IT,USD,96015.96,2024-11-04,basic
+C-748,user748@example.com,SE,GBP,10100.08,2022-07-25,basic
+C-749,user749@example.com,ES,USD,49690.10,2023-09-24,basic
+C-750,user750@example.com,DE,USD,26974.19,2022-10-08,pro
+C-751,user751@example.com,ES,EUR,46032.44,2021-09-18, Basic 
+C-752,user752@example.com,US,USD,15055.55,2025-02-01,basic
+C-753,user753@example.com,IT,GBP,50775.22,2021-11-08,basic
+C-754,user754@example.com,DEU,USD,65614.90,2021-03-26,enterprise
+C-755,"user755@example.com",PL,EUR,25696.22,2023-08-26,basic
+C-756,"user756@example.com",GB,GBP,74295.66,2021-01-21,basic
+C-757,user757@example.com,US,GBP,83844.19,2020-01-07,basic
+C-758,user758@example.com,US,USD,80634.02,2020-12-28,basic
+C-759,user759@example.com,SE,USD,38532.12,2024-04-08,basic
+C-760,user760@example.com,DE,GBP,47913.38,2023-10-07,basic
+C-761,user761@example.com,PL,USD,49592.00,2025-02-21,enterprise
+C-762,user762@example.com,PL,USD,54389.71,2021-11-06,basic
+C-763,user763@example.com,GB,GBP,3224.16,2025-12-22,pro
+C-764,user764@example.com,PL,USD,65223.85,2022-03-19,enterprise
+C-765,user765@example.com,ES,EUR,71211.61,2022-10-15,enterprise
+C-766,user766@example.com,ES,USD,86846.18,2022-02-23,basic
+C-767,user767@example.com,PL,USD,94188.57,2021-03-27,enterprise
+C-768,user768@example.com,US,USD,94278.41,2021-02-22,pro
+C-769,user769@example.com,FR,GBP,6131.37,13/11/2021,enterprise
+C-770,user770@example.com,FR,USD,92346.59,2020-01-18,basic
+C-771,user771@example.com,GB,EUR,65610.10,2025-10-28,enterprise
+C-772,,ES,USD,45471.44,2021-07-10,enterprise
+C-773,user773@example.com,IT,USD,89969.27,2025-11-01,basic
+C-774,user774@example.com,SE,EUR,48382.69,2025-04-17,pro
+C-775,  User775@Example.COM ,DE,EUR,33484.20,2024-01-06,pro
+C-776,user776@example.com,IT,USD,22874.90,2024-02-24,basic
+C-777,user777@example.com,PL,GBP,90363.10,2024-02-08,pro
+C-778,  User778@Example.COM ,US,GBP,80973.71,2023-05-24,basic
+C-779,user779@example.com,ES,GBP,25632.36,2023-02-07,basic
+C-780,user780@example.com,FR,GBP,55712.68,2024-04-21,pro
+C-781,user781@example.com,PL,GBP,27052.90,2022-03-14,enterprise
+C-782,user782@example.com,ES,GBP,35895.43,2020-02-27,pro
+C-783,user783@example.com,GB,usd,69288.69,2021-06-27,basic
+C-784,user784@example.com,NL,USD,88217.43,2021-12-04,enterprise
+C-785,user785@example.com,ES,GBP,69668.62,2020-06-01,basic
+C-786,user786@example.com,FR,EUR,70878.33,2025-01-18,basic
+C-787,,DE,USD,47378.05,2024-06-24,basic
+C-788,user788@example.com,DE,USD,27192.11,2024-03-09,enterprise
+C-789,user789@example.com,FR,GBP,95103.17,2020-12-14,enterprise
+C-790,user790@example.com,US,GBP,73647.90,2025-02-23,gold
+C-791,user791@example.com,GB,EUR,49177.86,2021-07-20,basic
+C-792,user792@example.com,NL,USD,91420.95,2024-10-10,basic
+C-793,user793@example.com,GB,EUR,48271.34,2020-02-15,basic
+C-794,user794@example.com,US,EUR,36328.24,2021-03-27,basic
+C-795,user795@example.com,PL,eur,64999.15,2021-05-22,pro
+C-796,user796@example.com,US,USD,17077.13,2022-03-28,pro
+C-797,user797@example.com,IT,USD,85700.19,2022-06-03,basic
+C-798,user798@example.com,IT,USD,15268.55,2024-04-06,pro
+C-799,user799@example.com,GB,USD,85150.62,2023-10-16,basic
+C-800,user800@example.com,PL,eur,29747.88,2021-10-03,enterprise
+C-801,user801@example.com,ES,EUR,68795.20,2025-07-14,basic
+C-802,user802@example.com,DE,GBP,82270.15,2024-09-05,basic
+C-803,"user803@example.com",NL,EUR,73173.29,2023-11-20,basic
+C-804,user804@example.com,FR,USD,94584.92,2024-12-16,basic
+C-805,user805@example.com,NL,gbp,27212.01,2025-03-02, Pro 
+C-806,user806@example.com,US,USD,86503.29,2021-06-04,basic
+C-807,user807@example.com,DE,GBP,50055.27,2024-12-05,enterprise
+C-808,user808@example.com,IT,USD,1163.59,2021-05-06,pro
+C-809,user809@example.com,FR,GBP,64409.16,2025-03-21,enterprise
+C-810,user810@example.com,FR,USD,43354.76,2025-12-15,pro
+C-811,user811@example.com,ES,USD,89955.58,2023-01-22,enterprise
+C-812,user812@example.com,IT,GBP,58898.03,2021-02-04, Enterprise 
+C-813,user813@example.com,ES,gbp,33040.55,2020-06-24, Pro 
+C-814,user814@example.com,IT,GBP,68182.28,2024-03-02,pro
+C-815,user815@example.com,NL,EUR,37840.54,2022-03-24,enterprise
+C-816,user816@example.com,ES,usd,82694.76,2020-11-10,enterprise
+C-817,user817@example.com,IT,EUR,14245.36,2023-12-16,pro
+C-818,user818@example.com,FR,GBP,52028.11,2021-08-27,pro
+C-819,user819@example.com,GB,EUR,30923.80,2025-07-17,pro
+C-820,user820@example.com,PL,EUR,33628.02,2023-07-08,enterprise
+C-821,user821@example.com,ES,GBP,95032.49,2023-06-23,basic
+C-822,user822@example.com,ES,EUR,19540.11,2023-02-16,pro
+C-823,user823@example.com,SE,USD,41514.65,2024-03-09,enterprise
+C-824,user824@example.com,IT,GBP,65387.37,2025-05-02,basic
+C-825,user825@example.com,ES,USD,60091.88,2022-02-02,pro
+C-826,user826@example.com,ES,USD,28165.93,2023-05-22,basic
+C-827,user827@example.com,US,GBP,49550.45,2023-02-01,pro
+C-828,,GB,GBP,82720.05,2023-08-01,enterprise
+C-829,"user829@example.com",US,USD,86479.23,2022-11-16,basic
+C-830,user830@example.com,SE,GBP,97379.84,2022-04-25,basic
+C-831,user831@example.com,GB,EURO,50188.86,2022-01-15,enterprise
+C-832,user832@example.com,DE,GBP,46056.39,2021-04-06, Pro 
+C-833,user833@example.com,ES,EUR,13353.86,2023-02-10,basic
+C-834,user834@example.com,DE,GBP,23322.25,2020-01-15,basic
+C-835,user835@example.com,ES,USD,6106.22,2021-12-04,enterprise
+C-836,user836@example.com,US,GBP,44508.87,2025-10-21,pro
+C-837,user837@example.com,GB,GBP,53614.66,2025-09-03, Pro 
+C-838,"user838@example.com",US,EURO,41304.21,2025-04-04,enterprise
+C-839,user839@example.com,FR,USD,39404.53,2023-01-13,enterprise
+C-840,user840@example.com,ES,EUR,68004.44,2023-12-08,basic
+C-841,user841@example.com,DE,EUR,13367.44,2025-01-12,enterprise
+C-842,user842@example.com,GB,GBP,82780.24,2022-08-26,basic
+C-843,user843@example.com,IT,usd,57742.99,2022-11-16,pro
+C-844,user844@example.com,US,USD,38030.17,2024-03-04,basic
+C-845,user845@example.com,IT,GBP,64213.31,2024-03-21,basic
+C-846,user846@example.com,GB,GBP,70845.13,2021-09-03,pro
+C-847,user847@example.com,FR,USD,46730.81,2024-12-03,basic
+C-848,  User848@Example.COM ,PL,USD,28580.96,2025-06-11,enterprise
+C-849,user849@example.com,ES,EUR,8848.42,2023-11-15,enterprise
+C-850,user850@example.com,GB,GBP,68460.62,2025-10-14,basic
+C-851,user851@example.com,DE,USD,58888.24,2025-04-10,basic
+C-852,user852@example.com,US,USD,89250.78,2022-01-23,pro
+C-853,user853@example.com,PL,GBP,6267.54,2025-10-06,basic
+C-854,user854@example.com,DE,USD,80410.56,2024-10-24,gold
+C-855,user855@example.com,FR,GBP,38011.96,2024-09-02,enterprise
+C-856,user856@example.com,IT,GBP,31151.29,2022-07-06,basic
+C-857,user857@example.com,NL,USD,4705.03,2022-11-25,enterprise
+C-858,user858@example.com,IT,USD,64520.90,2022-07-28,enterprise
+C-859,user859@example.com,GB,USD,6190.75,2020-04-01,pro
+C-860,  User860@Example.COM ,GB,USD,31132.72,2020-05-17,pro
+C-861,user861@example.com,ES,eur,84393.19,2020-11-10,enterprise
+C-862,  User862@Example.COM ,GB,USD,21250.34,2025-12-08,basic
+C-863,  User863@Example.COM ,PL,USD,80733.94,2023-02-19,basic
+C-864,user864@example.com,SE,GBP,29001.90,2025-08-10,enterprise
+C-865,user865@example.com,IT,EUR,48965.88,2023-10-13,pro
+C-866,user866@example.com,IT,USD,19895.75,2023-07-14,basic
+C-867,user867@example.com,IT,EUR,30760.32,2022-05-27,enterprise
+C-868,user868@example.com,IT,GBP,33122.88,2021-05-27,pro
+C-869,name869@,ES,GBP,38752.54,2021-02-20,pro
+C-870,  User870@Example.COM ,GB,GBP,81886.35,2020-04-06,basic
+C-871,user871@example.com,DE,USD,94821.85,2023-02-12,pro
+C-872,user872@example.com,SE,GBP,32989.30,2021-12-09,basic
+C-873,user873@example.com,GB,EUR,12068.91,2023-01-18,pro
+C-874,user874@example.com,US,USD,63374.43,2024-01-05,basic
+C-875,user875@example.com,GB,USD,3680.76,2022-03-02,enterprise
+C-876,user876@example.com,ES,USD,69521.99,2024-09-17,basic
+C-877,user877@example.com,GB,EUR,36977.02,2024-10-27, Basic 
+C-878,user878@example.com,FR,EUR,8046.58,2021-09-21,enterprise
+C-879,user879@example.com,NL,USD,98861.79,2020-10-21,basic
+C-880,user880@example.com,FR,EUR,8355.05,2020-09-02, Basic 
+C-881,"user881@example.com",FR,EUR,38824.23,2024-09-21,enterprise
+C-882,user882@example.com,ES,EUR,25308.16,2020-07-18,basic
+C-883,user883@example.com,PL,USD,99759.23,2020-06-17,pro
+C-884,user884@example.com,PL,GBP,91590.18,2020-06-18,enterprise
+C-885,user885@example.com,FR,GBP,65187.23,2024-10-17,enterprise
+C-886,user886@example.com,NL,GBP,28024.85,2020-03-12,enterprise
+C-887,,DE,usd,99310.99,2024-02-05,enterprise
+C-888,user888@example.com,NL,EUR,13816.16,2022-01-16,pro
+C-889,user889@example.com,IT,EUR,55276.64,2020-11-27,pro
+C-890,user890@example.com,SE,EUR,38255.05,2025-06-05,pro
+C-891,user891@example.com,PL,USD,93562.51,2021-07-09,enterprise
+C-892,user892@example.com,SE,GBP,61406.88,2025-04-05,basic
+C-893,user893@example.com,IT,USD,2036.13,2022-08-02,basic
+C-894,user894@example.com,PL,USD,92625.86,2024-09-07,enterprise
+C-895,user895@example.com,SE,EUR,53643.45,2023-03-28, Pro 
+C-896,user896@example.com,US,GBP,95114.82,2025-09-28, Pro 
+C-897,user897@example.com,NL,EUR,25479.26,2022-06-10,enterprise
+C-898,"user898@example.com",NL,USD,3998.94,2022-11-09,basic
+C-899,user899@example.com,GB,USD,20821.29,2024-10-03,basic
+C-900,user900@example.com,DE,GBP,36310.51,2021-06-07,basic
+C-901,user901@example.com,NL,GBP,33553.43,2021-04-11,enterprise
+C-902,user902@example.com,ES,GBP,3678.72,2021-06-03,enterprise
+C-903,user903@example.com,ES,USD,92680.41,2021-11-07,enterprise
+C-904,user904@example.com,PL,EUR,21390.69,2025-10-11,enterprise
+C-905,user905@example.com,PL,USD,92747.01,2021-01-14,pro
+C-906,  User906@Example.COM ,NL,GBP,57786.40,2022-10-17,pro
+C-907,user907@example.com,FR,GBP,29712.26,2022-09-04,basic
+C-908,user908@example.com,FR,EUR,98368.08,2021-11-05,pro
+C-909,user909@example.com,DE,GBP,70806.02,2024-10-03,basic
+C-910,user910@example.com,NL,GBP,16586.45,2020-11-19,pro
+C-911,user911@example.com,US,USD,53110.91,2022-03-18,basic
+C-912,user912@example.com,PL,EUR,31355.38,2024-10-12,enterprise
+C-913,user913@example.com,US,USD,71201.83,2022-05-25,pro
+C-914,  User914@Example.COM ,PL,EUR,65865.91,2020-04-06,basic
+C-915,user915@example.com,NL,usd,92264.03,2023-02-15,enterprise
+C-916,user916@example.com,IT,USD,49417.64,2021-12-25,pro
+C-917,user917@example.com,US,EUR,52916.67,2024-08-17,enterprise
+C-918,user918@example.com,DE,GBP,45092.63,2021-04-08,basic
+C-919,user919@example.com,SE,USD,31206.74,2024-09-11,enterprise
+C-920,user920@example.com,US,GBP,56745.75,2022-01-25,basic
+C-921,user921@example.com,NL,GBP,1739.25,2021-09-09,enterprise
+C-922,,FR,USD,14238.30,2024-11-24,pro
+C-923,user923@example.com,GB,EUR,95553.59,2024-08-05,pro
+C-924,user924@example.com,NL,USD,58098.31,2022-07-26,pro
+C-925,user925@example.com,PL,USD,15206.96,2022-04-15,basic
+C-926,user926@example.com,FR,GBP,79283.54,2023-08-13,basic
+C-927,user927@example.com,FR,USD,34302.37,2021-02-05,basic
+C-928,  User928@Example.COM ,IT,GBP,46944.50,2020-11-19,basic
+C-929,  User929@Example.COM ,SE,GBP,6204.36,2024-11-06,pro
+C-930,user930@example.com,ES,GBP,27603.90,2025-02-27,pro
+C-931,user931@example.com,US,GBP,33671.61,2020-12-26,enterprise
+C-932,user932@example.com,GB,GBP,66648.28,2025-11-09,pro
+C-933,user933@example.com,NL,USD,40261.53,2020-05-25,pro
+C-934,user934@example.com,SE,GBP,34868.29,2021-08-04,pro
+C-935,user935@example.com,NL,GBP,42161.67,2022-06-05, Enterprise 
+C-936,  User936@Example.COM ,GB,EUR,14391.96,2023-02-02,pro
+C-937,user937@example.com,ES,EUR,82982.02,2022-07-26,gold
+C-938,user938@example.com,NL,EUR,48341.28,2020-10-08,pro
+C-939,user939@example.com,IT,USD,56864.43,2024-01-24,basic
+C-940,user940@example.com,IT,USD,74421.20,2025-08-26,enterprise
+C-941,  User941@Example.COM ,SE,GBP,89123.18,2022-11-09,basic
+C-942,user942@example.com,GB,USD,60978.41,2025-12-26,enterprise
+C-943,user943@example.com,DE,EUR,95812.17,2020-10-18, Basic 
+C-944,user944@example.com,FR,EUR,33261.14,2023-11-20,enterprise
+C-945,,FR,USD,91725.49,2023-01-06,pro
+C-946,user946@example.com,FR,USD,92471.42,2021-03-15,pro
+C-947,user947@example.com,IT,USD,24299.76,2021-09-20,pro
+C-948,,PL,USD,15271.90,2022-10-23,pro
+C-949,user949@example.com,FR,USD,83550.13,2023-07-07,gold
+C-950,user950@example.com,PL,GBP,76871.12,2021-04-18,basic
+C-951,user951@example.com,FR,USD,99684.66,2021-12-10,basic
+C-952,user952@example.com,IT,USD,15709.37,2020-08-28,enterprise
+C-953,user953@example.com,ES,EUR,18420.09,2023-10-19,pro
+C-954,user954@example.com,SE,USD,79828.66,2022-06-12, Enterprise 
+C-955,user955@example.com,GB,EUR,17359.24,2025-10-25,pro
+C-956,,DE,GBP,33621.70,2024-12-01,pro
+C-957,user957@example.com,SE,EUR,59153.25,2020-04-08,enterprise
+C-958,user958@example.com,ES,USD,89021.12,2024-02-23,basic
+C-959,user959@example.com,IT,EUR,11688.88,2024-03-02,pro
+C-960,user960@example.com,GB,EUR,95425.66,2023-03-25,basic
+C-961,user961@example.com,SE,GBP,30137.21,2021-05-24,basic
+C-962,user962@example.com,IT,EUR,32317.80,2020-03-16,pro
+C-963,user963@example.com,DE,usd,4360.30,2025-11-24,enterprise
+C-964,user964@example.com,GB,GBP,13030.23,2024-12-09,enterprise
+C-965,user965@example.com,SE,GBP,82706.20,2024-02-12,basic
+C-966,user966@example.com,DE,USD,31423.45,2024-07-19,basic
+C-967,  User967@Example.COM ,FR,EUR,77289.72,2023-06-13,basic
+C-968,user968@example.com,FR,USD,90867.06,2024-09-08,basic
+C-969,user969@example.com,IT,GBP,93399.31,2023-03-10,enterprise
+C-970,user970@example.com,ES,GBP,38665.99,2024-07-21,enterprise
+C-971,user971@example.com,IT,EUR,72730.70,2025-10-11,pro
+C-972,user972@example.com,SE,USD,60374.82,2020-04-20,enterprise
+C-973,user973@example.com,PL,GBP,33947.50,2023-04-19,enterprise
+C-974,user974@example.com,ES,GBP,37571.17,2021-04-05, Pro 
+C-975,user975@example.com,ES,GBP,31091.43,2025-05-19,pro
+C-976,user976@example.com,IT,USD,47077.08,2023-02-17,pro
+C-977,user977@example.com,DE,GBP,81295.29,2024-12-16,basic
+C-978,user978@example.com,FR,USD,51483.77,2021-05-04,pro
+C-979,user979@example.com,IT,EUR,84427.21,2022-11-15,enterprise
+C-980,user980@example.com,DE,USD,97091.15,2021-11-17,basic
+C-981,user981@example.com,PL,GBP,65696.42,2021-12-11,enterprise
+C-982,user982@example.com,PL,gbp,69706.28,2024-05-18,pro
+C-983,user983@example.com,GB,USD,62805.35,26/07/2020,pro
+,"user984@example.com",NL,EUR,47382.77,2020-07-16,pro
+C-985,user985@example.com,PL,USD,58393.67,2025-10-22,enterprise
+C-986,user986@example.com,FR,USD,85701.58,2022-08-20,pro
+C-987,user987@example.com,IT,EUR,46938.94,2022-07-27,pro
+C-988,user988@example.com,ES,USD,74891.42,2022-09-19,basic
+C-989,user989@example.com,PL,EUR,52606.89,2020-05-03, Enterprise 
+C-990,user990@example.com,ES,USD,5965.47,2020-11-16,basic
+C-991,user991@example.com,IT,EUR,32546.69,2022-04-10,enterprise
+C-992,  User992@Example.COM ,GB,EUR,5004.09,2020-07-28,pro
+C-993,user993@example.com,SE,USD,88300.63,2025-05-05,pro
+C-994,user994@example.com,DE,GBP,20727.05,2024-07-19,enterprise
+C-995,user995@example.com,SE,GBP,78726.89,2021-08-06, Enterprise 
+C-996,user996@example.com,NL,USD,94389.17,2022-01-12,pro
+C-997,user997@example.com,DE,GBP,20859.83,2020-05-25,enterprise
+C-998,user998@example.com,US,EUR,79845.57,2025-06-14,basic
+C-999,user999@example.com,US,USD,7469.20,2021-06-16,basic
+,user1000@example.com,GB,GBP,56586.69,2025-04-06,basic
