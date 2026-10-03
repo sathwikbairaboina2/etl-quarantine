@@ -14,3 +14,5 @@ Ruling: v0.1 includes fix/discard/replay/promote and lineage but not Glue/Athena
 Ruling: no cost-per-million-rows number is published - nothing is deployed, so it cannot be measured - the design's second headline metric waits for a deploy
 Task 1: complete (typecheck exit 0; vitest 1 passed) | commit: "chore: scaffold etl-quarantine package"
 Task 2: complete (vitest test/core 10 passed; typecheck exit 0) | commit: "feat(core): add manifest types, customers dataset and purity guard"
+Task 3: complete (vitest test/core 40 passed cumulative; typecheck exit 0) | commit: "feat(core): normalise, validate with Ajv 2020-12 and cast valid rows"
+Task 4: complete (vitest test/core 64 passed cumulative incl. fast-check 500 runs; typecheck exit 0) | commit: "feat(core): add row accounting, limits, key layout and lineage rules"
