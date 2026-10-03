@@ -27,3 +27,4 @@ Task 10: complete (parquet 3 passed; typecheck exit 0) | commit: "feat(pipeline)
 Task 11: complete (validate-transform 7 passed; typecheck exit 0) | commit: "feat(pipeline): validate and transform chunks into pending Parquet and quarantine"
 Task 12: complete (reconcile 9 passed; test/pipeline 37 passed total; typecheck exit 0) | commit: "feat(pipeline): reconcile row accounting, hold over-threshold files, promote"
 Task 13: complete (generate 5 passed; fixtures: clean 200 rows/0 bad, 3pct 1000 rows/26 bad, 20pct 200 rows/40 bad; typecheck exit 0) | commit: "test: add seeded customer fixture generator and golden inputs"
+Task 14: complete (driver golden 3 + faults 6 passed; full npm test 22 files 153 tests passed; goldens: clean LOADED, 3pct LOADED_WITH_QUARANTINE 974/26, 20pct HELD 160/40; typecheck exit 0) | commit: "feat(pipeline): add in-process driver with fault injection and file readback"

@@ -76,6 +76,8 @@ export interface ReplayEdge {
   childSha: string;
   childKey: string;
   parentRows: number[];
+  /** sha256 of each replayed row's content, parallel to parentRows; lets replay skip rows resent unchanged. */
+  rowHashes?: string[];
   createdAt: string;
 }
 
