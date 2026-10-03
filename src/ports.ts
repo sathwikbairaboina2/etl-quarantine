@@ -84,7 +84,7 @@ export interface ReplayEdge {
 export interface ControlStore {
   createFile(meta: FileMeta): Promise<'created' | 'exists'>; // conditional on FILE#sha META absent
   getFile(sha: string): Promise<FileMeta | undefined>;
-  updateFile(sha: string, patch: Partial<FileMeta>): Promise<void>;
+  updateFile(sha: string, patch: Partial<FileMeta>, opts?: { ifStatus?: FileStatus }): Promise<void>; // NotFoundError if absent; StateError if ifStatus is given and does not match
   listFiles(dataset: string): Promise<FileMeta[]>; // newest first
   putChunk(sha: string, chunk: ChunkRecord): Promise<void>; // create-only: split result, rowsIn
   recordChunkResult(sha: string, index: number, r: ChunkResult): Promise<'applied' | 'stale'>; // set, never add; applies only if r.attempt >= stored attempt

@@ -52,6 +52,16 @@ describe('register', () => {
     expect((await register(d, { key: A })).status).toBe('DUPLICATE');
   });
 
+  it('two concurrent deliveries of a FAILED file re-admit it exactly once', async () => {
+    const d = memDeps();
+    await d.objects.put('raw', A, csv);
+    await d.objects.put('raw', 'dataset=customers/b.csv', csv);
+    const r = await register(d, { key: A });
+    await d.control.updateFile(r.sha, { status: 'FAILED', error: 'x' });
+    const both = await Promise.all([register(d, { key: A }), register(d, { key: 'dataset=customers/b.csv' })]);
+    expect(both.map((x) => x.status).sort()).toEqual(['DUPLICATE', 'REGISTERED']);
+  });
+
   it('size at limit is ok and limit+1 FAILED without META', async () => {
     const d = memDeps({ limits: { maxFileBytes: 10, maxRowBytes: 1024, maxColumns: 200 } });
     await d.objects.put('raw', 'dataset=customers/ok.csv', '0123456789');

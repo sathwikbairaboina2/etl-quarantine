@@ -9,10 +9,12 @@ import {
 } from '@aws-sdk/lib-dynamodb';
 import {
   NotFoundError,
+  StateError,
   type ChunkRecord,
   type ChunkResult,
   type ControlStore,
   type FileMeta,
+  type FileStatus,
   type ReplayEdge,
   type RowState,
 } from '../ports.js';
@@ -116,9 +118,15 @@ export class DynamoControlStore implements ControlStore {
     return r.Item ? stripKeys<FileMeta>(r.Item) : undefined;
   }
 
-  async updateFile(sha: string, patch: Partial<FileMeta>): Promise<void> {
+  async updateFile(sha: string, patch: Partial<FileMeta>, opts?: { ifStatus?: FileStatus }): Promise<void> {
     const names: Record<string, string> = {};
     const values: Record<string, unknown> = {};
+    let condition = 'attribute_exists(pk)';
+    if (opts?.ifStatus) {
+      names['#ifStatus'] = 'status';
+      values[':ifStatus'] = opts.ifStatus;
+      condition += ' AND #ifStatus = :ifStatus';
+    }
     const sets: string[] = [];
     const removes: string[] = [];
     Object.entries(patch).forEach(([k, v], i) => {
@@ -140,13 +148,17 @@ export class DynamoControlStore implements ControlStore {
           TableName: this.table,
           Key: { pk: fileKey(sha), sk: 'META' },
           UpdateExpression: expr,
-          ConditionExpression: 'attribute_exists(pk)',
+          ConditionExpression: condition,
           ExpressionAttributeNames: names,
           ...(Object.keys(values).length ? { ExpressionAttributeValues: values } : {}),
         }),
       );
     } catch (e) {
-      if (errName(e) === 'ConditionalCheckFailedException') throw new NotFoundError(`no file with sha ${sha}`);
+      if (errName(e) === 'ConditionalCheckFailedException') {
+        const current = opts?.ifStatus ? await this.getFile(sha) : undefined;
+        if (current) throw new StateError(`file ${sha} is ${current.status}, expected ${opts?.ifStatus}`);
+        throw new NotFoundError(`no file with sha ${sha}`);
+      }
       throw e;
     }
   }

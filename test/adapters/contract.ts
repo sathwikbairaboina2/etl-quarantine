@@ -1,6 +1,6 @@
 import { randomBytes } from 'node:crypto';
 import { beforeAll, describe, expect, it } from 'vitest';
-import { NotFoundError, type ControlStore, type FileMeta, type ObjectStore } from '../../src/ports.js';
+import { NotFoundError, StateError, type ControlStore, type FileMeta, type ObjectStore } from '../../src/ports.js';
 
 const uid = () => randomBytes(6).toString('hex');
 const text = (b: Uint8Array) => new TextDecoder().decode(b);
@@ -128,6 +128,17 @@ export function controlStoreContract(name: string, makeStore: Maker<ControlStore
       const f = await c.getFile(sha);
       expect(f).toMatchObject({ status: 'SPLIT', rowsIn: 12, columns: ['a', 'b'] });
       await expect(c.updateFile(uid(), { status: 'FAILED' })).rejects.toBeInstanceOf(NotFoundError);
+    });
+
+    it('updateFile with ifStatus applies only from that status', async () => {
+      const sha = uid();
+      await c.createFile(meta(sha, `ds${uid()}`, '2026-10-04T09:00:00.000Z'));
+      await c.updateFile(sha, { status: 'FAILED', error: 'x' });
+      await c.updateFile(sha, { status: 'REGISTERED', error: undefined }, { ifStatus: 'FAILED' });
+      expect(await c.getFile(sha)).toMatchObject({ status: 'REGISTERED' });
+      await expect(c.updateFile(sha, { status: 'SPLIT' }, { ifStatus: 'FAILED' })).rejects.toBeInstanceOf(StateError);
+      expect((await c.getFile(sha))?.status).toBe('REGISTERED');
+      await expect(c.updateFile(uid(), { status: 'SPLIT' }, { ifStatus: 'FAILED' })).rejects.toBeInstanceOf(NotFoundError);
     });
 
     it('listFiles is newest first and scoped to the dataset', async () => {

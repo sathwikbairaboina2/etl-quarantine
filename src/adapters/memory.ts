@@ -1,11 +1,13 @@
 import { Readable } from 'node:stream';
 import {
   NotFoundError,
+  StateError,
   type BucketName,
   type ChunkRecord,
   type ChunkResult,
   type ControlStore,
   type FileMeta,
+  type FileStatus,
   type ObjectStore,
   type ReplayEdge,
   type RowState,
@@ -124,9 +126,12 @@ export class InMemoryControlStore implements ControlStore {
     return f ? clone(f) : undefined;
   }
 
-  async updateFile(sha: string, patch: Partial<FileMeta>): Promise<void> {
+  async updateFile(sha: string, patch: Partial<FileMeta>, opts?: { ifStatus?: FileStatus }): Promise<void> {
     const f = this.files.get(sha);
     if (!f) throw new NotFoundError(`no file with sha ${sha}`);
+    if (opts?.ifStatus && f.status !== opts.ifStatus) {
+      throw new StateError(`file ${sha} is ${f.status}, expected ${opts.ifStatus}`);
+    }
     const next = { ...f } as Record<string, unknown>;
     for (const [k, v] of Object.entries(patch)) {
       if (v === undefined) delete next[k];

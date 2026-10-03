@@ -1,7 +1,7 @@
 import { KeyError, datasetFromRawKey, parentShaFromReplayKey } from '../core/keys.js';
 import { LimitError, checkFileSize } from '../core/limits.js';
 import { UnknownDatasetError, getDataset, type Dataset } from '../datasets/registry.js';
-import { NotFoundError, type FileMeta } from '../ports.js';
+import { NotFoundError, StateError, type FileMeta } from '../ports.js';
 import type { Deps } from './deps.js';
 import { sha256Stream } from './hash.js';
 
@@ -52,19 +52,30 @@ export async function register(deps: Deps, input: { key: string }): Promise<Regi
   }
   const existing = await deps.control.getFile(sha);
   if (existing?.status === 'FAILED') {
-    // A failed file is not final: clear its partial progress and run it again from this delivery.
+    // A failed file is not final: claim it (FAILED -> REGISTERED, conditional, so only one concurrent
+    // delivery wins), then clear its partial progress and run it again from this delivery.
+    try {
+      await deps.control.updateFile(
+        sha,
+        {
+          status: 'REGISTERED',
+          sourceKey: key,
+          error: undefined,
+          rowsIn: undefined,
+          rowsValid: undefined,
+          rowsQuarantined: undefined,
+          chunkCount: undefined,
+          updatedAt: at,
+          ...(parentSha ? { parentSha } : {}),
+        },
+        { ifStatus: 'FAILED' },
+      );
+    } catch (e) {
+      if (!(e instanceof StateError)) throw e;
+      await deps.control.recordDuplicate(dataset, sha, key, at);
+      return { status: 'DUPLICATE', sha, dataset, key, originalKey: existing.sourceKey };
+    }
     await deps.control.resetChunks(sha);
-    await deps.control.updateFile(sha, {
-      status: 'REGISTERED',
-      sourceKey: key,
-      error: undefined,
-      rowsIn: undefined,
-      rowsValid: undefined,
-      rowsQuarantined: undefined,
-      chunkCount: undefined,
-      updatedAt: at,
-      ...(parentSha ? { parentSha } : {}),
-    });
     return { status: 'REGISTERED', sha, dataset, key };
   }
   await deps.control.recordDuplicate(dataset, sha, key, at);
