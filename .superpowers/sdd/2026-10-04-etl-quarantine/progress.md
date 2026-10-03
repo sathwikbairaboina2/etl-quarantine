@@ -21,3 +21,7 @@ Task 6: complete (vitest test/adapters memory contracts pass; typecheck exit 0) 
 Task 7: complete (vitest test/adapters 37 passed total; typecheck exit 0) | commit: "feat(adapters): add filesystem object store and JSON-file control store"
 Ruling: added .gitattributes (text=auto eol=lf, csv -text) - Windows autocrlf would alter fixture bytes/shas - none
 Task 8: complete (vitest register 8 passed; typecheck exit 0) | commit: "feat(pipeline): register files by content hash with duplicate detection"
+Task 9: complete (vitest test/pipeline 18 passed total; typecheck exit 0) | commit: "feat(pipeline): stream-split CSV files into staged chunks"
+Ruling: added optional Deps.chunkRows override of manifest.chunkRows - plan tests/bench need small chunks (12 rows/5, 100) without mutating the registry - none, defaults to manifest value
+Task 10: complete (parquet 3 passed; typecheck exit 0) | commit: "feat(pipeline): write curated Parquet parts with explicit schema"
+Task 11: complete (validate-transform 7 passed; typecheck exit 0) | commit: "feat(pipeline): validate and transform chunks into pending Parquet and quarantine"
