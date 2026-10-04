@@ -2,7 +2,7 @@
 
 Drop a CSV in a raw bucket. Every row is checked against a versioned JSON Schema. Good rows land as Parquet. Bad rows land in a quarantine you can inspect, fix and replay with one command. The pipeline proves that no row is lost or loaded twice, even when chunks crash and the same file arrives twice.
 
-**1,000,000 rows, 18 injected chunk crashes and a duplicate delivery: 0 lost, 0 duplicated, 35,950 rows/s on one machine.** Counted by reading the Parquet and quarantine files back, not from counters. Details and the 20-seed fault sweep (20 of 20 runs conserved every row) are in [bench/RESULTS.md](bench/RESULTS.md), generated from [bench/results.json](bench/results.json). Throughput is from a single run and varies with machine load (three runs on the same machine gave 15,013, 23,184 and 35,950 rows/s; the last is the one committed in `bench/results.json`); the conservation results reproduced exactly.
+**1,000,000 rows, 18 injected chunk crashes and a duplicate delivery: 0 lost, 0 duplicated.** Counted by reading the Parquet and quarantine files back, not from counters. A 20-seed fault sweep conserved every row in 20 of 20 runs. Details are in [bench/RESULTS.md](bench/RESULTS.md), generated from [bench/results.json](bench/results.json). Throughput depends heavily on machine load: five runs on the same machine gave 9,667 to 44,768 rows/s (9,667, 15,013, 23,184, 35,950 and 44,768). The committed run is the 9,667 rows/s one, measured on the final commit while other jobs held the CPU at about 85%. The conservation results reproduced exactly in every run.
 
 ## 30 seconds
 
@@ -138,8 +138,8 @@ npm run bench                  # 1M rows + 20-seed sweep, writes bench/results.j
 
 Real counts from the last runs on the build machine:
 
-- `npm test`: 30 test files and 214 tests passed; 2 integration files (20 tests) skipped because `ETL_IT` is unset.
-- `npm run test:it` against DynamoDB Local 3.3.1 and S3Mock 4.11.0: 2 files, 20 tests passed (the same adapter contract suites that run against memory and the file system, plus the pipeline on the AWS adapters).
+- `npm test`: 30 test files and 224 tests passed; 2 integration files (22 tests) skipped because `ETL_IT` is unset.
+- `npm run it:up && npm run test:it` against DynamoDB Local 3.3.1 and S3Mock 4.11.0, from cold containers: 2 files, 22 tests passed in 85 s (the same adapter contract suites that run against memory and the file system, plus the pipeline on the AWS adapters). The emulators take about 30 s to start; the suite waits up to 120 s (`ETL_IT_WAIT_MS`).
 - `npm run synth`: both stacks synthesize (`EtlQuarantineStorage` 14 resources, `EtlQuarantinePipeline` 25) with zero unacknowledged cdk-nag AwsSolutions violations. Each acknowledgement has a written reason in `infra/lib/nag-suppressions.ts`.
 - `npm run bench`: see [bench/RESULTS.md](bench/RESULTS.md).
 

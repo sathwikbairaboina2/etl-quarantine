@@ -1,7 +1,7 @@
 {
   "command": "npm run bench",
-  "timestamp": "2026-10-03T23:46:57.586Z",
-  "gitCommit": "f57c740",
+  "timestamp": "2026-10-04T00:01:56.858Z",
+  "gitCommit": "fb00997",
   "machine": {
     "node": "v24.18.0",
     "os": "Windows_NT 10.0.26200 x64",
@@ -38,9 +38,9 @@
     "lost": 0,
     "duplicated": 0,
     "labelsMatch": true,
-    "ingestSeconds": 27.82,
-    "rowsPerSecond": 35950,
-    "peakRssMB": 430
+    "ingestSeconds": 103.45,
+    "rowsPerSecond": 9667,
+    "peakRssMB": 406
   },
   "sweep": {
     "rows": 100000,
