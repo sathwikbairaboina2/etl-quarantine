@@ -2,7 +2,7 @@
 
 > ETL with row-level quarantine. Bad rows are quarantined, fixed and replayed; no row is lost or loaded twice.
 
-Drop a CSV in a raw bucket. Every row is checked against a versioned JSON Schema. Good rows land as Parquet. Bad rows land in a quarantine you can inspect, fix and replay with one command. The pipeline proves that no row is lost or loaded twice, even when chunks crash and the same file arrives twice.
+**1,000,000 rows, 18 injected chunk crashes and a duplicate delivery: 0 lost, 0 duplicated,** counted by reading the Parquet and quarantine files back, not from counters (`bench/results.json`).
 
 <!-- readme-header -->
 [![CI](https://github.com/sathwikbairaboina2/etl-quarantine/actions/workflows/ci.yml/badge.svg)](https://github.com/sathwikbairaboina2/etl-quarantine/actions/workflows/ci.yml) ![License: MIT](https://img.shields.io/badge/license-MIT-blue) ![TypeScript](https://img.shields.io/badge/-TypeScript-555) ![Step Functions](https://img.shields.io/badge/-Step%20Functions-555) ![Parquet](https://img.shields.io/badge/-Parquet-555)
@@ -11,7 +11,9 @@ Drop a CSV in a raw bucket. Every row is checked against a versioned JSON Schema
 |---|---|
 | **1M rows, 0 lost, 0 dupes** | `bench/results.json` |
 
-**1,000,000 rows, 18 injected chunk crashes and a duplicate delivery: 0 lost, 0 duplicated.** Counted by reading the Parquet and quarantine files back, not from counters. A 20-seed fault sweep conserved every row in 20 of 20 runs. Details are in [bench/RESULTS.md](bench/RESULTS.md), generated from [bench/results.json](bench/results.json). Throughput depends heavily on machine load: five runs on the same machine gave 9,667 to 44,768 rows/s (9,667, 15,013, 23,184, 35,950 and 44,768). The committed run is the 9,667 rows/s one, measured on the final commit while other jobs held the CPU at about 85%. The conservation results reproduced exactly in every run.
+Drop a CSV in a raw bucket. Every row is checked against a versioned JSON Schema. Good rows land as Parquet. Bad rows land in a quarantine you can inspect, fix and replay with one command. The pipeline checks that no row is lost or loaded twice, even when chunks crash and the same file arrives twice.
+
+A 20-seed fault sweep conserved every row in 20 of 20 runs. Details are in [bench/RESULTS.md](bench/RESULTS.md), generated from [bench/results.json](bench/results.json). Throughput depends heavily on machine load: five runs on the same machine gave 9,667 to 44,768 rows/s (9,667, 15,013, 23,184, 35,950 and 44,768). Only the 9,667 rows/s run is committed; it was measured on the final commit while other jobs held the CPU at about 85%. The other four are recorded in `docs/handoff.md`. The conservation results reproduced exactly in every run.
 
 ## 30 seconds
 
@@ -93,7 +95,7 @@ flowchart LR
   ctl[(DynamoDB control table)] <-.-> sm
 ```
 
-`src/core` is pure (no AWS SDK, no file system; a test enforces it). Steps are plain async functions over two ports, `ObjectStore` and `ControlStore`. The same functions run behind Lambda handlers, behind the in-process driver (`src/pipeline/driver.ts`, which mirrors the state machine) and behind the CLI. Nothing is deployed in v0.1: the state machine is proven by CDK assertion tests and `cdk synth`, and the AWS adapters by an emulator suite.
+`src/core` is pure (no AWS SDK, no file system; a test enforces it). Steps are plain async functions over two ports, `ObjectStore` and `ControlStore`. The same functions run behind Lambda handlers, behind the in-process driver (`src/pipeline/driver.ts`, which mirrors the state machine) and behind the CLI. Nothing is deployed in v0.1: the state machine is checked by CDK assertion tests and `cdk synth`, and the AWS adapters by an emulator suite.
 
 ## Invariants and the tests that prove them
 
