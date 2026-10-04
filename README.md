@@ -138,7 +138,7 @@ npm run bench                  # 1M rows + 20-seed sweep, writes bench/results.j
 
 Real counts from the last runs on the build machine:
 
-- `npm test`: 30 test files and 224 tests passed; 2 integration files (22 tests) skipped because `ETL_IT` is unset.
+- `npm test`: 30 test files and 225 tests passed; 2 integration files (22 tests) skipped because `ETL_IT` is unset.
 - `npm run it:up && npm run test:it` against DynamoDB Local 3.3.1 and S3Mock 4.11.0, from cold containers: 2 files, 22 tests passed in 85 s (the same adapter contract suites that run against memory and the file system, plus the pipeline on the AWS adapters). The emulators take about 30 s to start; the suite waits up to 120 s (`ETL_IT_WAIT_MS`).
 - `npm run synth`: both stacks synthesize (`EtlQuarantineStorage` 14 resources, `EtlQuarantinePipeline` 25) with zero unacknowledged cdk-nag AwsSolutions violations. Each acknowledgement has a written reason in `infra/lib/nag-suppressions.ts`.
 - `npm run bench`: see [bench/RESULTS.md](bench/RESULTS.md).

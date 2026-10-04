@@ -175,7 +175,15 @@ describe('replay and lineage', () => {
     const before = await assertPartition(d, sha);
     expect(before.loaded).toBe(1);
     await expect(discard(d, { sha, rowNumbers: [20] })).rejects.toBeInstanceOf(StateError);
+    await expect(fixValid(d, sha, 20)).rejects.toThrow(/already loaded/);
     expect(await assertPartition(d, sha)).toEqual(before);
+  });
+
+  it('fix rejects a discarded row', async () => {
+    const d = memDeps({ chunkRows: 100 });
+    const sha = await setup(d);
+    await discard(d, { sha, rowNumbers: [20] });
+    await expect(fixValid(d, sha, 20)).rejects.toThrow(/already discarded/);
   });
 
   it('rows of a replay child that ended FAILED can be replayed again', async () => {

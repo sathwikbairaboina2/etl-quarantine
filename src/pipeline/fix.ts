@@ -42,6 +42,10 @@ export async function fix(
   assertWorkable(meta, 'fix rows of');
   const q = (await loadQuarantine(deps, sha)).find((r) => r.rowNumber === rowNumber);
   if (!q) throw new StateError(`row ${rowNumber} is not quarantined in file ${sha}`);
+  const state = (await deps.control.listRowStates(sha)).get(rowNumber) ?? 'pending';
+  if (state !== 'pending' && state !== 'requarantined') {
+    throw new StateError(`row ${rowNumber} of file ${sha} is already ${state}`);
+  }
 
   const { manifest, schema } = getDataset(meta.dataset);
   const existing = await readApprovedFix(deps, meta.dataset, sha, rowNumber);
